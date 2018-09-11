@@ -31,6 +31,6 @@ Be sure to compare the ES5 and ES6 examples in the documentation below, as they 
 
 - [Class Definition](http://es6-features.org/#ClassDefinition)
 
-- [Object Assignment](http://es6-features.org/#ObjectPropertyAssignment) (will not be on quiz 1)
+- [Object Assignment](http://es6-features.org/#ObjectPropertyAssignment)
 
-- [Promises](http://es6-features.org/#PromiseUsage) (will not be on quiz 1)
+- [Promises](http://es6-features.org/#PromiseUsage)
