@@ -4,43 +4,11 @@ title: Deliverables
 permalink: /deliverables/
 ---
 
-### Project 1 - Stop Watch
+### Project 1 - To Do App
 
 Weight: 20%
 
-Due Date: Beginning of Class 3
-
-#### Requirements
-
-1. Create a new React application, name it "stop-watch".
-
-1. Create a component called "StopWatch" and render it inside of your top level "App" component.
-
-1. Your Stop Watch should render a timer that starts automatically when the View loads.
-
-1. The timer should be in the format "mm:ss". Eg. 01:15 (1 minute and 15 seconds). Do not worry about times over 1 hour.
-
-1. The timer should update the view every second.
-
-1. Display a button labeled "Pause". This button pauses the timer.
-
-1. When paused, button should display "Start". Clicking on it restarts the timer.
-
-1. Display a button labeled "Reset". This button resets the timer to 0 and stops the timer.
-
-1. When the timer is 0, the "Pause" button should be re-labeled as "Start".
-
-1. When the timer is 0 and the timer is not running, the Reset button should be disabled. Ensure that the button is also visibly disabled.
-
-1. Make sure to test it, to avoid bugs. What happens if the Start button is clicked multiple times? How about if the Stop button is clicked multiple times?
-
----
-
-### Project 2 - To Do App
-
-Weight: 30%
-
-Due Date: Beginning of Class 5
+Due Date: Beginning of Class 4
 
 #### Requirements
 
@@ -52,7 +20,11 @@ Due Date: Beginning of Class 5
 
 1. Blank items should not be added to the list. This can happen if the user presses the "Add" button without writing down a task.
 
+1. Users should be able to add items to the list by using the "Enter" key as well.
+
 1. The list could potentially have 0 to multiple items.
+
+1. After adding an item, the text input must be emptied automatically.
 
 1. Each list item must display a checkbox, and the task that the user wrote.
 
@@ -60,7 +32,7 @@ Due Date: Beginning of Class 5
 
 1. Ensure that you make use of Components intelligently. Think about what should be extracted into a separate component, and do so.
 
-##### Stretch Goals
+##### Stretch Goals (not for marks)
 
 If you breezed through the exercise above and would like a challenge, here are some ideas. Note that you will not get extra marks for these, they are purely for learning purposes only.
 
@@ -68,13 +40,13 @@ If you breezed through the exercise above and would like a challenge, here are s
 
 1. Allow ordering the list by timestamp, ascending and descending.
 
-1. Allow for title and description for each to-do item.
-
-1. Allow sorting items by drag and drop. (For more advanced programmers who feel are already comfortable with React)
+1. Allow sorting items by drag and drop. (For more advanced programmers who are already comfortable with React). You may use external libraries if you wish to do so.
 
 ---
 
-### Project 3 - Weather Application
+<!--
+
+### Project 2 - Weather Application
 
 Weight: 30%
 
