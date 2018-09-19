@@ -51,7 +51,7 @@ Note that the comments below are based on the instructor's opinions and experien
 
 - componentWillUpdate() - Not as often used as the method above. Mainly used for preparation when props and state change. But due to the fact that you cannot trigger a new state in this method, I've seen limited use for this.
 
-- componentDidUpdate() - Also very limited use. It's a good place to manually access the DOM.
+- componentDidUpdate() - It's a good place to manually access the DOM. Also useful for running logic based on props/state changes. Eg. If prop `userId` changes, fetch for data for this new `userId`.
 
 - componentDidCatch() - This is a new lifecycle method. Perfect for displaying a fallback UI or sending crash errors to a remote service.
 
