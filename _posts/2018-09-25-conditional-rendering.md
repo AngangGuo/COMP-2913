@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Conditional Rendering"
+title:  "Class 3: Conditional Rendering"
 date:   2018-09-25 15:00:00 +0700
 categories: [react]
 ---
