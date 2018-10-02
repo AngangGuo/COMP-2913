@@ -44,13 +44,11 @@ If you breezed through the exercise above and would like a challenge, here are s
 
 ---
 
-<!--
-
 ### Project 2 - Weather Application
 
 Weight: 30%
 
-Due Date: Beginning of Class 6 (June 26th, 2018)
+Due Date: Beginning of Class 5
 
 #### Requirements
 
