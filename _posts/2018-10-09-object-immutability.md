@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "JavaScript Object Immutability"
-date:   2018-06-25 14:00:00 +0700
-categories: [javascrit]
+title:  "Class 5: JavaScript Object Immutability"
+date:   2018-10-09 14:00:00 +0700
+categories: [javascript]
 ---
 
 #### What is Immutability?
