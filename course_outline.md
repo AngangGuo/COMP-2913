@@ -9,8 +9,8 @@ Instructor led labs and exercises focus on how to structure and develop single-p
 ### Course Schedule
 
 | Oct 30  | Class 1  |                                                |
-| Nov 6   | Class 2  | Project 1 instructions                         |
-| Nov 13  | Class 3  | Quiz 1                                         |
+| Nov 6   | Class 2  |                                                |
+| Nov 13  | Class 3  | Quiz 1, Project 1 instructions                 |
 | Nov 20  | Class 4  | Quiz 2, Project 1 Due, Project 2 Instructions  |
 | Nov 27  | Class 5  | Quiz 3, Project 2 Due                          |
 | Dec 4   | Class 6  | Final                                          |
