@@ -2,12 +2,14 @@
 Whether you need a refresher on JavaScript, or you would like to become more proficient,
 I've collected some great resources that I highly recommend.
 
+<!--
 ---
 
 - [COMP-2913 Slack Group](https://bcit-comp2913.slack.com/signup) - Slack group for the COMP2913 course at BCIT.
 Highly recommended for in-depth discussions, help from me and your peers and to get to know your classmates in general.
 
 ---
+-->
 
 - [You don't know JS](https://github.com/getify/You-Dont-Know-JS)
 
