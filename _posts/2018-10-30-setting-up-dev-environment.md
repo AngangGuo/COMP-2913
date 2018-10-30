@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 1: Setting up your Dev Environment"
-date:   2018-09-10 19:00:00 +0700
+date:   2018-10-30 01:30:00 +0700
 categories: [react]
 ---
 

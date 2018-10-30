@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 5: JavaScript Object Immutability"
-date:   2018-10-09 14:00:00 +0700
+date:   2018-11-27 00:30:00 +0700
 categories: [javascript]
 ---
 

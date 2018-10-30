@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 4: Installing npm packages"
-date:   2018-10-02 12:00:00 +0700
+date:   2018-11-20 01:00:00 +0700
 ---
 
 #### What is npm?

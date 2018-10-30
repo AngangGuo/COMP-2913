@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 2: Event Handlers"
-date:   2018-09-17 12:30:00 +0700
+date:   2018-11-06 01:00:00 +0700
 categories: [react]
 ---
 
