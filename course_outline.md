@@ -1,4 +1,5 @@
 ### Course Outline
+
 React is an open source JavaScript library for building user interfaces for web and mobile applications.
 This challenging, hands-on courses follows on from COMP 1850 and COMP 2015 and is aimed at students who already understand how to build web pages with HTML5, CSS3 and JavaScript.
 The main goal of using React is to create fast and modular applications. Students begin with an introduction to the basic concepts of React and how it works with the browser Document Object Model. Other topics include JavaScript, ES6, JSX, Redux and React Router.
