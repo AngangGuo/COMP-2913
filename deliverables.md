@@ -44,6 +44,8 @@ If you breezed through the exercise above and would like a challenge, here are s
 
 ---
 
+<!--
+
 ### Project 2 - Weather Application
 
 Weight: 30%
@@ -155,7 +157,7 @@ Did you submit your files as specified and on time? Is your name on the project?
 
 #### Submitting Projects/Final
 
-In [D2L](http://learn.bcit.ca), look for the React course, and select Dropbox. There should be folders for each project.
+In [D2L](http://learn.bcit.ca), look for the React course, and select Assignments. There should be folders for each project.
 Ensure that you **do not include** the node_modules folder in your project when submitting.
 Zip your React app folder and name it {projectNumber}_{firstName}_{lastName}.
 Eg. project1_daniel_takeuchi.zip
