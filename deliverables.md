@@ -44,7 +44,6 @@ If you breezed through the exercise above and would like a challenge, here are s
 
 ---
 
-<!--
 
 ### Project 2 - Weather Application
 
