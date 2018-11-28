@@ -119,6 +119,18 @@ I will have the finals marked by April 17th.
 
 ---
 
+#### Tips
+
+1. Try to apply what you have learned in class, before turning to Google
+
+1. If you do decide to look online for ways to solve the projects, keep in mind that some solutions may be outdated, possible making use of deprecated features.
+
+1. Do not submit code that you do not understand.
+
+1. Break down problems into smaller portions that you can solve.
+
+---
+
 #### Marking criteria
 
 You will be marked according to the criteria below:
