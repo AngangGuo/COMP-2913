@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 2: Component Lifecycle"
-date:   2018-11-06 00:30:00 +0700
+date:   2019-01-15 00:30:00 +0700
 categories: [react]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 1: React Introduction"
-date:   2018-10-30 00:00:00 +0700
+date:   2019-01-08 00:00:00 +0700
 categories: [react]
 ---
 

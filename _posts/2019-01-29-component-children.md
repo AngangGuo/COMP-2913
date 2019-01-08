@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 4: Component Children"
-date:   2018-11-20 00:00:00 +0700
+date:   2019-01-29 00:00:00 +0700
 ---
 
 #### Component Children
