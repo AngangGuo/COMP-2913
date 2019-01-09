@@ -117,7 +117,7 @@ To get the most out of this course, and to help the class run as smoothly as pos
 
 - How to I handle OAuth in a React application? (not relevant to the rest of the students)
 
-#### Exampls of good questions:
+#### Examples of good questions:
 
 - I'm getting error "x". What's wrong?
 
