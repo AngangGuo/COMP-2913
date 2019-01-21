@@ -140,6 +140,12 @@ layout: compress
               {{ site.about }}
             </div>
           {% endif %}
+          {% if site.d2l %}
+            <div class="profile-about">
+              For accessing quizzes, assignment delivery and class examples, find them at
+              <a href="{{ site.d2l }}">D2L</a>
+            </div>
+          {% endif %}
           <div class="social">
             <ul>
               <li><a href="mailto:{{ site.email }}" target="_blank"><i class="fa fa-envelope-o"></i></a></li>

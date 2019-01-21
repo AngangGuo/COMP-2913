@@ -3,6 +3,7 @@ description: British Columbia Institute of Technology - School of Computing and 
 author: Daniel K. Takeuchi
 github: https://daniel-takeuchi.github.io/COMP-2913
 about: For any questions, feedback or concerns, please email me, and I will get back within 48 hours.
+d2l: https://learn.bcit.ca/d2l/home/524826
 disqus_shortname: comp2913
 google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
@@ -25,8 +26,8 @@ urls:
       url: /course_outline
     - text: Helpful Resources
       url: /help
-    # - text: Deliverables
-    #   url: /deliverables
+    - text: Deliverables
+      url: /deliverables
     - text: About
       url: /about
     # - text: My Projects

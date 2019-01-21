@@ -4,7 +4,7 @@ title: Deliverables
 permalink: /deliverables/
 ---
 
-### Project 1 - To Do App
+### Project 1 - Shopping List App
 
 Weight: 20%
 
@@ -12,13 +12,13 @@ Due Date: Beginning of Class 4
 
 #### Requirements
 
-1. Create a new React application, name it "todo-app".
+1. Create a new React application, name it "shopping-list".
 
-1. This app will display a text input for the user, where they will be able to write a task.
+1. This app will display a text input for the user, where they will be able to write a shopping item. Eg. "a dozen eggs", "detergent".
 
-1. A button should be displayed beside the input. When clicked, this button should add the user's input to a list of to do items.
+1. A button labeled "Add to Shopping list" should be displayed beside the input. When clicked, this button should add the user's input to a list of shopping items.
 
-1. Blank items should not be added to the list. This can happen if the user presses the "Add" button without writing down a task.
+1. Blank items should not be added to the list. This can happen if the user presses the add button without writing down a task.
 
 1. Users should be able to add items to the list by using the "Enter" key as well.
 
@@ -26,9 +26,9 @@ Due Date: Beginning of Class 4
 
 1. After adding an item, the text input must be emptied automatically.
 
-1. Each list item must display a checkbox, and the task that the user wrote.
+1. Each list item must display the shopping item name and a button labeled "delete".
 
-1. When checking off the checkbox, the list item should be removed from the list.
+1. When clicking on the delete button, the list item should be removed from the list.
 
 1. Ensure that you make use of Components intelligently. Think about what should be extracted into a separate component, and do so.
 
@@ -44,6 +44,7 @@ If you breezed through the exercise above and would like a challenge, here are s
 
 ---
 
+<!--
 
 ### Project 2 - Weather Application
 
