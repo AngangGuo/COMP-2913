@@ -12,9 +12,9 @@ Instructor led labs and exercises focus on how to structure and develop single-p
 | Jan 8  | Class 1  |                                                |
 | Jan 15 | Class 2  |                                                |
 | Jan 22 | Class 3  | Quiz 1, Project 1 instructions                 |
-| Jan 29 | Class 4  | Quiz 2, Project 1 Due, Project 2 Instructions  |
-| Feb 5  | Class 5  | Quiz 3, Project 2 Due                          |
-| Feb 12 | Class 6  | Final                                          |
+| Jan 29 | Class 4  | Quiz 2, Project 2 Instructions                 |
+| Feb 5  | Class 5  | Quiz 3, Project 1 Due,                         |
+| Feb 12 | Class 6  | Project 2 Due, Final                           |
 
 ---
 
