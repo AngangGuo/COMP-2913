@@ -30,3 +30,11 @@ Highly recommended for in-depth discussions, help from me and your peers and to 
 
   An overview of the new JavaScript features available with ES6. I highly recommend you familiarize yourself
   with this list. Also see a list of the ones I recommend looking into first, [here](/COMP-2913/react/2017/11/01/es6-features.html).
+
+---
+
+- [Advice to new Programmers](http://olafurw.com/2019-01-27-programmer-advice/)
+
+This is a great article I came across. It has some solid advice for new programmers.
+
+---
