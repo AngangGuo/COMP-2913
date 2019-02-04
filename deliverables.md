@@ -45,11 +45,13 @@ If you breezed through the exercise above and would like a challenge, here are s
 ---
 
 
-### Project 2 - Weather Application
+### Project 2 - Weather Application (OPTION 1)
 
-Weight: 30%
+Weight: 20%
 
 Due Date: Beginning of Class 6
+
+Due to the Yahoo Weather Forecast API being deprecated, I'm adding a second option for Project 2. 
 
 #### Requirements
 
@@ -59,7 +61,8 @@ Due Date: Beginning of Class 6
 
 1. Create a dropdown select input with at least 5 different cities. When selecting one of the cities from the dropdown, the view should display the weather information for that specific city.
 
-1. You will need to make http requests to fetch for data. Documentation is here: [YAHOO! Weather API](https://developer.yahoo.com/weather/)
+1. You will need to make http requests to fetch for data.
+NOTE: The Yahoo Weather Forecast API got deprecated on January 3rd, 2019. If you'd still like to try this project, feel free to look for alternative APIs, although you may need to read more of the documentation to get the requests to work.
 
 1. If you make the API request below, you will get data for the weather forecast for Vancouver, for the next few days. Display the forecast, with weather information, temperature, etc.
 
@@ -69,15 +72,43 @@ Due Date: Beginning of Class 6
 
 1. Display images for each weather type. A rainy day should display a rainy icon.
 
-1. The http request above returns data in American measurements. Since we're in Canada, ensure that the data displayed uses the metric system/Celsius. There are a number of ways to do this. It's up to you to figure out.
+1. Since we're in Canada, ensure that the data displayed uses the metric system/Celsius. 
 
-1. To facilitate your lives, I'll give you the specific endpoint that you need to make requests to.
+---
+
+### Project 2 (OPTION 2)
+
+Weight: 20%
+
+Due Date: Beginning of Class 6
+
+Due to the Yahoo Weather Forecast API being deprecated, you have the option to try this project instead.
+
+#### Requirements
+
+1. Create a new React application, name it "books-app".
+
+1. This app will display a list of books, based on what users search for.
+
+1. Display a text input, pre-populated with a value, like "harry potter".
+
+1. When the app loads, it will automatically fetch for a list of books based on the value inside of the text input.
+
+1. The list of books should display the name of the book and a description for each item. Also make sure to display it's categories. If available, display the thumbnail of the book as well.
+
+1. Clicking on the title of the book should take you to the external book page.
+
+1. Allow users to search for different books. Feel free to add a "submit" button.
+
+1. Once users try to search for new books, reload the items of the page with items that match the current search term.
+
+1. If no results are found, display a proper message: "no books found for '12345678987654326765'".
+
+1. While the book list loads, display a loading message or spinner.
 
 ```
-# Note that there are invalid characters for an url on the API endpoint below.
-# If you make a http request with these characters, the request utility will encode
-# these characters automatically for you!
-GET https://query.yahooapis.com/v1/public/yql?format=json&q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="vancouver, bc")
+# Here's an example request for books with the term "harry potter"
+GET https://www.googleapis.com/books/v1/volumes?q=harry potter
 ```
 
 ---
