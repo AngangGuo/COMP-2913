@@ -16,9 +16,9 @@ class ShoppingListItem extends Component {
     render() {
         return (
             <li>
-            <h2>{this.props.name}<h2>
-            <p>{this.props.description}</p>
-            <p>Quantity: {this.props.quantity}</p>
+                <h2>{this.props.name}<h2>
+                <p>{this.props.description}</p>
+                <p>Quantity: {this.props.quantity}</p>
             </li>
         );
     }
@@ -37,9 +37,9 @@ import React from 'react';
 function ShoppingListItem(props) {
     return (
         <li>
-        <h2>{props.name}<h2>
-        <p>{props.description}</p>
-        <p>Quantity: {props.quantity}</p>
+            <h2>{props.name}<h2>
+            <p>{props.description}</p>
+            <p>Quantity: {props.quantity}</p>
         </li>
     );
 }
