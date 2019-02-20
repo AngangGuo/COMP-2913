@@ -30,7 +30,7 @@ Upon completion successful participants will be able to build fast and feature-r
 - Construct single-page applications using React and it’s supporting toolchain, including NPM, Webpack and Babel.
 - Use JavaScript features introduced with ECMAScript 6.
 - Build feature-rich, interactive user interfaces with modular components.
-- Implement extended React functionality with Redux and React router Libraries.
+- Implement extended React external Libraries.
 - Apply fundamental Software Development concepts to architect your web application.
 
 ---
