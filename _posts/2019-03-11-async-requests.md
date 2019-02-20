@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 4: Asynchronous requests"
-date:   2019-01-29 01:30:00 +0700
+date:   2019-03-11 01:30:00 +0700
 ---
 
 #### Making Asynchronous HTTP requests in React
