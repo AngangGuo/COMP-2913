@@ -8,7 +8,7 @@ permalink: /deliverables/
 
 Weight: 20%
 
-Due Date: Beginning of Class 5
+Due Date: Beginning of Class 4
 
 #### Requirements
 
@@ -44,6 +44,7 @@ If you breezed through the exercise above and would like a challenge, here are s
 
 ---
 
+<!--
 
 ### Project 2 - Weather Application (OPTION 1)
 
