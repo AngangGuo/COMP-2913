@@ -44,40 +44,7 @@ If you breezed through the exercise above and would like a challenge, here are s
 
 ---
 
-<!--
-
-### Project 2 - Weather Application (OPTION 1)
-
-Weight: 20%
-
-Due Date: Beginning of Class 6
-
-Due to the Yahoo Weather Forecast API being deprecated, I'm adding a second option for Project 2. 
-
-#### Requirements
-
-1. Create a new React application, name it "weather-app".
-
-1. This app will display weather forecast information for a select few cities. Note that you should display the forecast for the next few days, not just the current day.
-
-1. Create a dropdown select input with at least 5 different cities. When selecting one of the cities from the dropdown, the view should display the weather information for that specific city.
-
-1. You will need to make http requests to fetch for data.
-NOTE: The Yahoo Weather Forecast API got deprecated on January 3rd, 2019. If you'd still like to try this project, feel free to look for alternative APIs, although you may need to read more of the documentation to get the requests to work.
-
-1. If you make the API request below, you will get data for the weather forecast for Vancouver, for the next few days. Display the forecast, with weather information, temperature, etc.
-
-1. Users of your application should be able to use the dropdown to select different cities, and see weather for them.
-
-1. Make good use of Component composition. Break parts of your application into sub-components, as you see fit.
-
-1. Display images for each weather type. A rainy day should display a rainy icon.
-
-1. Since we're in Canada, ensure that the data displayed uses the metric system/Celsius. 
-
----
-
-### Project 2 (OPTION 2)
+### Project 2
 
 Weight: 20%
 
