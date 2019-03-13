@@ -48,9 +48,7 @@ If you breezed through the exercise above and would like a challenge, here are s
 
 Weight: 20%
 
-Due Date: Beginning of Class 6
-
-Due to the Yahoo Weather Forecast API being deprecated, you have the option to try this project instead.
+Due Date: Beginning of Class 5
 
 #### Requirements
 
