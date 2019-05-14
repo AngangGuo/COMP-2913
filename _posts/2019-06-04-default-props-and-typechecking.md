@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 4: Default Props and type-checking"
-date:   2019-03-11 00:30:00 +0700
+date:   2019-06-04 00:30:00 +0700
 ---
 
 #### Default Props

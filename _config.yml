@@ -24,10 +24,10 @@ social:
 urls:
     - text: Course Outline
       url: /course_outline
-    - text: Deliverables
-      url: /deliverables
-    - text: Extra Exercises
-      url: /exercises
+    # - text: Deliverables
+    #   url: /deliverables
+    # - text: Extra Exercises
+    #   url: /exercises
     - text: Helpful Resources
       url: /help
     - text: About

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 5: Function components"
-date:   2019-03-18 00:10:00 +0700
+date:   2019-06-11 00:10:00 +0700
 categories: [javascript]
 ---
 

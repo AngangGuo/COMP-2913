@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Class 5: React Router"
-date:   2019-03-18 01:00:00 +0700
+date:   2019-06-11 01:00:00 +0700
 ---
 
 #### What is React Router?
