@@ -109,6 +109,9 @@ Please refer to this page:
 
 There's a guide on how to create a new React app. We will do this together in class. Note that instructions may change, depending on your Operating System.
 
+- Once you have read the page referenced above, go through these steps to setup a create-react-app application:
+[https://reactjs.org/docs/create-a-new-react-app.html#create-react-app](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)
+
 ---
 
 ### Create React App

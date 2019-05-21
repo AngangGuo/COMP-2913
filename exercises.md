@@ -60,6 +60,8 @@ Here are some extra practice React exercises you can try out. More will be added
 
 - Asynchronous requests
 
+- React Router
+
 ##### Instructions
 
 1. Create a new React application called "dog-breeds"
@@ -81,3 +83,44 @@ https://dog.ceo/api/breed/hound/images
 
 ---
 
+#### Employee Manager
+
+##### React concepts needed:
+
+- Component Props
+
+- Component State
+
+- Event Handllers
+
+- Controlled Forms
+
+##### Instructions
+
+1. Create a new React application called "employee-manager"
+
+1. Display a form for adding new employees.
+
+1. This form should include fields for "first name", "last name" and "date of birth".
+
+1. This form should also include a dropdown for "user type". This dropdown should include options for "manager", "contractor" and an empty option as default.
+
+1. If the dropdown value is set to "manager", display a new field on the form for "Team Name".
+
+1. If the dropdown value is set to "contractor", display a new field on the form for "Contract End Date".
+
+1. If the dropdown value is empty, do not display any extra fields.
+
+1. Once the user submits the form, add the employee to the list below the form. (List starts empty).
+
+1. Each Employee List Item must display all the information available for each employee.
+
+1. For Managers and contractors, also display a tag, or something of the sort to be able to differ employee types.
+
+1. Display a delete button for each employee.
+
+1. Clicking on the delete button removes the employee from the list.
+
+1. Add controls for sorting the list of employees by first and last names.
+
+---
