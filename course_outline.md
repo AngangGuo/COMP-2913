@@ -78,7 +78,7 @@ All marks related to labs, assignments, quizzes and tests will be available thro
 
 ### Submitting Homework
 All Labs, Assignments and Exam should be submitted through [Desire2Learn (learn.bcit.ca)](learn.bcit.ca).
-There will be a Dropbox for your course. It can be located at: COMP2913 -> Activities -> Dropbox. Each lab, assignment and exam will have their own directories. Always zip your deliverables, and rename the file in this format: lab1_firstname_lastname.zip
+There will be a Dropbox for your course. It can be located at: COMP2913 -> Activities -> Assignments. Each lab, assignment and exam will have their own directories. Always zip your deliverables, and rename the file in this format: lab1_firstname_lastname.zip
 You would be surprised by how often deliverables are handed in without a name. Marks will be deducted if no name is provided.
 Ideally, please try to submit your deliverables on time. I’ll be as flexible as possible, as I know students also have other important priorities. It would really help me though, if you strive to meet the given deadlines. For Project 3, the due date is non-negotiable, as I also have a deadline to submit final marks to Administration.
 This also goes with submitting the same assignment multiple times. I will only mark the latest one submitted, but I would also appreciate if this is avoided as much as possible.
