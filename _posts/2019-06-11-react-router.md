@@ -6,7 +6,7 @@ date:   2019-06-11 01:00:00 +0700
 
 #### What is React Router?
 
-[React Router](https://reacttraining.com/react-router/) is a popular library used by React Applications. It's actively maintained and is undergoing major changes over the years. Last year, a full revamp was released with version 4.
+[React Router](https://reacttraining.com/react-router/) is a popular library used by React Applications. It's actively maintained and is undergoing major changes over the years. Last year, a full revamp was released with version 4. They're currently on version 5.
 It bundles a set of Components used for navigation. As you know, React is used for creating single page applications. With the help of React Router, you can have the benefits of multiple views under different urls, nested routes, etc.
 
 ---
