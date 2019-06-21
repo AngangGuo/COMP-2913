@@ -1,0 +1,43 @@
+/* your custom css */
+
+.home__image {
+  width: 50%;
+}
+
+.footer_instructor {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-gap: 15px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.footer__instructor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius:40px;
+}
+
+.footer__instructor-details {
+  color: white;
+  line-height: 1.5;
+}
+
+.footer_instructor .footer__instructor-details a {
+  display: inline;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}

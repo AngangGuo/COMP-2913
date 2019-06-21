@@ -1,0 +1,40 @@
+{
+  "react": {
+    "Introduction to React": [
+      "what-is-react",
+      "who-uses-react",
+      "benefits",
+      "alternatives"
+    ],
+    "Getting started": [
+      "before-getting-started",
+      "create-react-app"
+    ],
+    "Basic Concepts": [
+      "bootstrapping",
+      "jsx",
+      "react-components",
+      "function-components",
+      "react-state",
+      "component-lifecycle",
+      "event-handlers",
+      "lists",
+      "conditional-rendering",
+      "forms"
+    ]
+  },
+  "es6": {
+    "First Category": ["doc4", "doc5"]
+  },
+  "course_outline": {
+    "Course Outline": [
+      "course-description",
+      "requirements",
+      "schedule",
+      "grading",
+      "expectations",
+      "refund-policy",
+      "contact"
+    ]
+  }
+}
