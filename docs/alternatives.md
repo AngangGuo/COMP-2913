@@ -7,11 +7,11 @@ sidebar_label: "Alternatives"
 Although React is not a full-fledged front-end JavaScript framework, it often is used as the base of full applications. Alternatives to React include:
 
 <ul style="display: inline-flex; list-style: none; padding: 0;">
-  <li><img src="/img/company_logos/angular.png" alt="angular" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
-  <li><img src="/img/company_logos/vue.png" alt="vue" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
-  <li><img src="/img/company_logos/ember.png" alt="ember" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
-  <li><img src="/img/company_logos/meteor.png" alt="meteor" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
-  <li><img src="/img/company_logos/backbone.png" alt="backbone" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/img/company_logos/angular.png" alt="angular" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/img/company_logos/vue.png" alt="vue" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/img/company_logos/ember.png" alt="ember" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/img/company_logos/meteor.png" alt="meteor" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/img/company_logos/backbone.png" alt="backbone" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
 </ul>
 
 

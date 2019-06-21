@@ -36,7 +36,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <p>{siteConfig.description}</p>
-          <img className="home__image" src="/img/undraw_react.svg" />
+          <img className="home__image" src={`${siteConfig.baseUrl}img/undraw_react.svg`} />
         </div>
       </SplashContainer>
     );
