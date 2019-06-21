@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Lists · COMP-2913</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;There will be times when you&#x27;d want to render a list of elements, that could potentially have 0 to a variable number of items. Would you need to copy/paste a component for each of these items?&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Lists · COMP-2913"/><meta property="og:type" content="website"/><meta property="og:url" content="https://daniel-takeuchi.github.io/COMP-2913/"/><meta property="og:description" content="&lt;p&gt;There will be times when you&#x27;d want to render a list of elements, that could potentially have 0 to a variable number of items. Would you need to copy/paste a component for each of these items?&lt;/p&gt;
+"/><meta property="og:image" content="https://daniel-takeuchi.github.io/COMP-2913/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://daniel-takeuchi.github.io/COMP-2913/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/COMP-2913/img/react-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/COMP-2913/js/scrollSpy.js"></script><link rel="stylesheet" href="/COMP-2913/css/main.css"/><script src="/COMP-2913/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/COMP-2913/"><img class="logo" src="/COMP-2913/img/react-logo.png" alt="COMP-2913"/><h2 class="headerTitleWithLogo">COMP-2913</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/COMP-2913/docs/what-is-react" target="_self">React</a></li><li class=""><a href="/COMP-2913/docs/doc4" target="_self">ECMAScript 6</a></li><li class=""><a href="/COMP-2913/docs/course-description" target="_self">Course Outline</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Basic Concepts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction to React</h3><ul class=""><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/what-is-react">What is React?</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/who-uses-react">Who uses React?</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/benefits">Why use React?</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/alternatives">Alternatives</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/before-getting-started">Before getting started</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/create-react-app">Create React App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Basic Concepts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/bootstrapping">Bootstrapping</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/jsx">JSX</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/react-components">React Components</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/function-components">Function vs Class Components</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/react-state">State</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/component-lifecycle">Component Lifecycle</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/event-handlers">Event Handlers</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/COMP-2913/docs/lists">Lists</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/conditional-rendering">Conditional Rendering</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/forms">Forms</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Lists</h1></header><article><div><span><p>There will be times when you'd want to render a list of elements, that could potentially have 0 to a variable number of items. Would you need to copy/paste a component for each of these items?</p>
+<p>Examples of when you'd want to render a list:</p>
+<ul>
+<li><p>Displaying a list of your Social Network connections.</p></li>
+<li><p>Displaying a list of online activity by your friends.</p></li>
+<li><p>Displaying a dynamic dropdown, which options could vary in value and length.</p></li>
+</ul>
+<p>Please see <a href="https://reactjs.org/docs/lists-and-keys.html">React - Lists and Keys</a> for up to date examples.</p>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="exercise"></a><a href="#exercise" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exercise:</h4>
+<ul>
+<li><p>Use the data below to display a list of cars for sale.</p></li>
+<li><p>Create a Component for &quot;CarListItem&quot;. It must accept props for it's data.</p></li>
+<li><p>Render each item in the list. Do not forget to set a &quot;key&quot; on each item.</p></li>
+</ul>
+<pre><code class="hljs css language-js">[
+  {
+    <span class="hljs-attr">brand</span>: <span class="hljs-string">'Toyota'</span>,
+    <span class="hljs-attr">make</span>: <span class="hljs-string">'Corolla'</span>,
+    <span class="hljs-attr">year</span>: <span class="hljs-number">2015</span>,
+    <span class="hljs-attr">imageUrl</span>: <span class="hljs-string">'http://s3.caradvice.com.au/thumb/1000/562/wp-content/uploads/2015/06/2015-toyota-corolla-zr-4.jpg'</span>,
+    <span class="hljs-attr">price</span>: <span class="hljs-number">19200</span>,
+    <span class="hljs-attr">new</span>: <span class="hljs-literal">false</span>
+  },
+  {
+    <span class="hljs-attr">brand</span>: <span class="hljs-string">'Honda'</span>,
+    <span class="hljs-attr">make</span>: <span class="hljs-string">'Civic'</span>,
+    <span class="hljs-attr">year</span>: <span class="hljs-number">2016</span>,
+    <span class="hljs-attr">imageUrl</span>: <span class="hljs-string">'https://cars.usnews.com/static/images/Auto/izmo/i2314304/2016_honda_civic_angularrear.jpg'</span>,
+    <span class="hljs-attr">price</span>: <span class="hljs-number">21600</span>,
+    <span class="hljs-attr">new</span>: <span class="hljs-literal">false</span>
+  },
+  {
+    <span class="hljs-attr">brand</span>: <span class="hljs-string">'Ford'</span>,
+    <span class="hljs-attr">make</span>: <span class="hljs-string">'Mustang'</span>,
+    <span class="hljs-attr">year</span>: <span class="hljs-number">2008</span>,
+    <span class="hljs-attr">imageUrl</span>: <span class="hljs-string">'https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/CAB80FOC051B0101.jpg'</span>,
+    <span class="hljs-attr">price</span>: <span class="hljs-number">13600</span>,
+    <span class="hljs-attr">new</span>: <span class="hljs-literal">false</span>
+  },
+  {
+    <span class="hljs-attr">brand</span>: <span class="hljs-string">'Mercedes Benz'</span>,
+    <span class="hljs-attr">make</span>: <span class="hljs-string">'C-Class C43'</span>,
+    <span class="hljs-attr">year</span>: <span class="hljs-number">2017</span>,
+    <span class="hljs-attr">imageUrl</span>: <span class="hljs-string">'https://61571e67bd8f1f6acb1a-642f5177af5aebf9ccc5072ad2e9ac32.ssl.cf1.rackcdn.com/WDDWJ6EB0HF469169/b101c9f787e7c70c0803a02b2210783a.jpg'</span>,
+    <span class="hljs-attr">price</span>: <span class="hljs-number">68000</span>,
+    <span class="hljs-attr">new</span>: <span class="hljs-literal">true</span>
+  },
+  {
+    <span class="hljs-attr">brand</span>: <span class="hljs-string">'Tesla'</span>,
+    <span class="hljs-attr">make</span>: <span class="hljs-string">'Model X'</span>,
+    <span class="hljs-attr">year</span>: <span class="hljs-number">2017</span>,
+    <span class="hljs-attr">imageUrl</span>: <span class="hljs-string">'https://cnet4.cbsistatic.com/img/3-14WgVgrMGZ_pKcAqsefdLScJc=/830x467/2016/04/28/5a91e8fc-14bc-4c22-abe4-b990073328d2/2016-tesla-model-s-19-of-43.jpg'</span>,
+    <span class="hljs-attr">price</span>: <span class="hljs-number">130000</span>,
+    <span class="hljs-attr">new</span>: <span class="hljs-literal">true</span>
+  }
+]
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/COMP-2913/docs/event-handlers"><span class="arrow-prev">← </span><span>Event Handlers</span></a><a class="docs-next button" href="/COMP-2913/docs/conditional-rendering"><span>Conditional Rendering</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>BCIT</h5><a href="https://learn.bcit.ca/d2l/home/555034">D2L Course Home</a><a href="https://www.bcit.ca/study/courses/comp2913">Course sign up</a></div><div><h5>Helpful Resources</h5><a href="https://reactjs.org/">React Docs</a><a href="https://github.com/getify/You-Dont-Know-JS">You don&#x27;t know JS Book Series</a><a href="http://es6-features.org" target="_blank" rel="noreferrer noopener">ECMAScript 6 Features</a></div><div><h5>Instructor</h5><div class="footer_instructor"><img class="footer__instructor-avatar" src="/img/daniel_takeuchi.jpg"/><address class="footer__instructor-details"><h5>Daniel Takeuchi</h5>Software Engineer @ <a href="https://flipboard.com">Flipboard</a><br/>Instructor @ <a href="https://flipboard.com">BCIT</a><br/><a href="mailto:dtakeuchi@my.bcit.ca">dtakeuchi@my.bcit.ca</a></address></div></div></section><a href="https://bcit.ca/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/COMP-2913/img/bcit-logo.png" alt="BCIT"/></a><section class="copyright">Copyright © 2019 Daniel Kiyohiko Takeuchi</section></footer></div></body></html>

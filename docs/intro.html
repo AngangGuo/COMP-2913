@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Introduction to React · COMP-2913</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h4&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;what-is-react&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#what-is-react&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is React&lt;/h4&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Introduction to React · COMP-2913"/><meta property="og:type" content="website"/><meta property="og:url" content="https://daniel-takeuchi.github.io/COMP-2913/"/><meta property="og:description" content="&lt;h4&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;what-is-react&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#what-is-react&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is React&lt;/h4&gt;
+"/><meta property="og:image" content="https://daniel-takeuchi.github.io/COMP-2913/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://daniel-takeuchi.github.io/COMP-2913/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/COMP-2913/img/react-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/COMP-2913/js/scrollSpy.js"></script><link rel="stylesheet" href="/COMP-2913/css/main.css"/><script src="/COMP-2913/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/COMP-2913/"><img class="logo" src="/COMP-2913/img/react-logo.png" alt="COMP-2913"/><h2 class="headerTitleWithLogo">COMP-2913</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/COMP-2913/docs/what-is-react" target="_self">React</a></li><li class=""><a href="/COMP-2913/docs/doc4" target="_self">ECMAScript 6</a></li><li class=""><a href="/COMP-2913/docs/course-description" target="_self">Course Outline</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Introduction to React</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="what-is-react"></a><a href="#what-is-react" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is React</h4>
+<ul>
+<li>It is a JavaScript library for building User Interfaces.</li>
+<li>It’s open source</li>
+<li>Started in 2013.</li>
+<li>Can currently be used to develop browser and native mobile applications</li>
+<li>Created by Jordan Walke, a Software Engineer at Facebook. It is currently maintained by Facebook, Instagram and other individual contributors.</li>
+<li>Allows developers to create complex single-page or server rendered applications.</li>
+<li>It’s fast, simple and scalable.</li>
+</ul>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="who-uses-react"></a><a href="#who-uses-react" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Who uses React?</h4>
+<ul style="display: inline-flex; list-style: none; padding: 0;">
+  <li><img src="/COMP-2913/static/img/company_logos/airbnb.png" alt="airbnb" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/coursera.png" alt="coursera" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/dropbox.png" alt="dropbox" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/facebook.png" alt="facebook" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/flipboard.png" alt="flipboard" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/instagram.jpg" alt="instagram" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/netflix.png" alt="netflix" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/pinterest.jpeg" alt="pinterest" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/twitter.png" alt="twitter" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/uber.png" alt="uber" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/wordpress.png" alt="wordpress" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+</ul>
+<ul>
+<li>Airbnb</li>
+<li>Coursera</li>
+<li>Dropbox</li>
+<li>Facebook</li>
+<li>Flipboard</li>
+<li>Instagram</li>
+<li>Netflix</li>
+<li>Pinterest</li>
+<li>Twitter</li>
+<li>Uber</li>
+<li>Wordpress</li>
+<li>…and thousands more big and small companies</li>
+</ul>
+<p><em>Source: <a href="https://github.com/facebook/react/wiki/sites-using-react">React on Github</a></em></p>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="alternatives-to-react"></a><a href="#alternatives-to-react" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Alternatives to React</h4>
+<p>Although React is not a full-fledged front-end JavaScript framework, it often is used as the base of full applications. Alternatives to React include:</p>
+<ul style="display: inline-flex; list-style: none; padding: 0;">
+  <li><img src="/COMP-2913/static/img/company_logos/angular.png" alt="angular" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/vue.png" alt="vue" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/ember.png" alt="ember" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/meteor.png" alt="meteor" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+  <li><img src="/COMP-2913/static/img/company_logos/backbone.png" alt="backbone" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
+</ul>
+<ul>
+<li>Angular</li>
+<li>Vue.js</li>
+<li>Ember</li>
+<li>Meteor</li>
+<li>Backbone.js</li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="how-does-react-compare-with-other-frameworks"></a><a href="#how-does-react-compare-with-other-frameworks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How does React compare with other frameworks?</h3>
+<ul>
+<li>React is a light-weight library for building user interfaces, whereas other frameworks follow the MVC (Model View Controller) architecture. React would only be the “V” in MVC.</li>
+<li>Currently the fastest growing JavaScript “framework”.</li>
+<li>Generally easier to learn.</li>
+<li>More adaptive and flexible, as there’s less standards set by the framework itself. This means that more choice is available on what libraries to use to build the base of your application.</li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="the-flexibility-of-react"></a><a href="#the-flexibility-of-react" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The flexibility of React</h3>
+<ul>
+<li>Can be used for single page applications or server rendered web pages.</li>
+<li>Usable in the browser or in native mobile applications.</li>
+<li>Option to use JSX or vanilla JavaScript.</li>
+<li>Option to use Babel, which gives developers the ability to use new ECMAScript 6 features. Alternatively, vanilla ES5 JavaScript.</li>
+<li>Wide variety of libraries compatible with React.</li>
+<li>Supports all major browsers and Internet Explorer 9 onwards.</li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="before-getting-started"></a><a href="#before-getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Before Getting Started</h3>
+<p>As React is still evolving, often new tools and features are added over time. In this class,
+I'll link to the actual React documentation, so that we have access to the latest up-to-date information.
+Please keep in mind that although the core concepts of the React library will likely not change drastically, often the API (Application Programming Interface) will. In order to ensure that these notes are always up to date, I'll link to the actual React documentation when applicable.
+Also, as some initial setup is needed in order to run React on your computer, I strongly suggest that if you have a personal laptop, that you use it instead of BCIT's lab computers. This will save you the trouble of having to setup your machine every class.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h3>
+<p>Please refer to this page:
+<a href="https://facebook.github.io/react/docs/installation.html">https://facebook.github.io/react/docs/installation.html</a></p>
+<p>There's a guide on how to create a new React app. We will do this together in class. Note that instructions may change, depending on your Operating System.</p>
+<ul>
+<li>Once you have read the page referenced above, go through these steps to setup a create-react-app application:
+<a href="https://reactjs.org/docs/create-a-new-react-app.html#create-react-app">https://reactjs.org/docs/create-a-new-react-app.html#create-react-app</a></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="create-react-app"></a><a href="#create-react-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create React App</h3>
+<p>Currently, the easiest way to get started with React is with <a href="https://github.com/facebookincubator/create-react-app">&quot;Create React App&quot;</a>, a project maintained by Facebook. Create React App allows us to scaffold a new React project, with basic configuration and tooling all setup from the get-go.</p>
+<pre><code class="hljs"><span class="hljs-comment">// Directory structure (as of October 2017)</span>
+
+my-app
+
+├── README<span class="hljs-selector-class">.md</span>
+
+├── node_modules
+
+├── package<span class="hljs-selector-class">.json</span>
+
+├── <span class="hljs-selector-class">.gitignore</span>
+
+├── public
+
+│   └── favicon<span class="hljs-selector-class">.ico</span>
+
+│   └── index<span class="hljs-selector-class">.html</span>
+
+│   └── manifest<span class="hljs-selector-class">.json</span>
+
+└── src
+
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="project-structure"></a><a href="#project-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Project Structure</h4>
+<ul>
+<li><p><strong>Readme.md</strong> - This file is my-app's readme text file. The &quot;.md&quot; stands for markdown.</p></li>
+<li><p><strong>node_modules</strong> - This directory contains the code for the package dependencies for your project. You will never need to edit the files in this directory manually.</p></li>
+<li><p><strong>package.json</strong> - This file contains relevant project metadata and list of package dependencies and their accepted versions. These dependencies get installed into the node_modules directory. If you add a new dependency, the added package will be added to node_modules. If you remove a dependency, it will be removed from node_modules. Read more at <a href="https://www.npmjs.com/">npm</a>.</p></li>
+<li><p><strong>.gitignore</strong> - List of files and directories to be ignored by <a href="https://git-scm.com/">git</a>. Git is a widely used version control system, used for small and large projects. <a href="https://github.com/">Github</a>, a software development platform, is built around git.</p></li>
+<li><p><strong>public</strong> - Files that will be made available at the root of your client side React project. Mainly used for static assets, like images, and the base index.html file. You will rarely need to use this folder, as the index.html will be automatically updated for you as you work on your project.</p></li>
+<li><p><strong>src</strong> - Contains all code related files in your project, including JavaScript and CSS files. The entry point for your JavaScript code is <strong>src/index.js</strong>, which is where my-app's React will kick in.</p></li>
+</ul>
+<hr>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>BCIT</h5><a href="https://learn.bcit.ca/d2l/home/555034">D2L Course Home</a><a href="https://www.bcit.ca/study/courses/comp2913">Course sign up</a></div><div><h5>Helpful Resources</h5><a href="https://reactjs.org/">React Docs</a><a href="https://github.com/getify/You-Dont-Know-JS">You don&#x27;t know JS Book Series</a><a href="http://es6-features.org" target="_blank" rel="noreferrer noopener">ECMAScript 6 Features</a></div><div><h5>Instructor</h5><div class="footer_instructor"><img class="footer__instructor-avatar" src="/img/daniel_takeuchi.jpg"/><address class="footer__instructor-details"><h5>Daniel Takeuchi</h5>Software Engineer @ <a href="https://flipboard.com">Flipboard</a><br/>Instructor @ <a href="https://flipboard.com">BCIT</a><br/><a href="mailto:dtakeuchi@my.bcit.ca">dtakeuchi@my.bcit.ca</a></address></div></div></section><a href="https://bcit.ca/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/COMP-2913/img/bcit-logo.png" alt="BCIT"/></a><section class="copyright">Copyright © 2019 Daniel Kiyohiko Takeuchi</section></footer></div></body></html>

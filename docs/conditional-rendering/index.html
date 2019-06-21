@@ -1,0 +1,831 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Conditional Rendering · COMP-2913</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;In your application, depending on the state, you may want to display/hide certain things.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Conditional Rendering · COMP-2913"/><meta property="og:type" content="website"/><meta property="og:url" content="https://daniel-takeuchi.github.io/COMP-2913/"/><meta property="og:description" content="&lt;p&gt;In your application, depending on the state, you may want to display/hide certain things.&lt;/p&gt;
+"/><meta property="og:image" content="https://daniel-takeuchi.github.io/COMP-2913/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://daniel-takeuchi.github.io/COMP-2913/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/COMP-2913/img/react-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/COMP-2913/js/scrollSpy.js"></script><link rel="stylesheet" href="/COMP-2913/css/main.css"/><script src="/COMP-2913/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/COMP-2913/"><img class="logo" src="/COMP-2913/img/react-logo.png" alt="COMP-2913"/><h2 class="headerTitleWithLogo">COMP-2913</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/COMP-2913/docs/what-is-react" target="_self">React</a></li><li class=""><a href="/COMP-2913/docs/doc4" target="_self">ECMAScript 6</a></li><li class=""><a href="/COMP-2913/docs/course-description" target="_self">Course Outline</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Basic Concepts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction to React</h3><ul class=""><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/what-is-react">What is React?</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/who-uses-react">Who uses React?</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/benefits">Why use React?</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/alternatives">Alternatives</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/before-getting-started">Before getting started</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/create-react-app">Create React App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Basic Concepts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/bootstrapping">Bootstrapping</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/jsx">JSX</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/react-components">React Components</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/function-components">Function vs Class Components</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/react-state">State</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/component-lifecycle">Component Lifecycle</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/event-handlers">Event Handlers</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/lists">Lists</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/COMP-2913/docs/conditional-rendering">Conditional Rendering</a></li><li class="navListItem"><a class="navItem" href="/COMP-2913/docs/forms">Forms</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Conditional Rendering</h1></header><article><div><span><p>In your application, depending on the state, you may want to display/hide certain things.</p>
+<p>Examples of when conditional rendering can be used:</p>
+<ul>
+<li><p>If a user is logged in, you may want to display a welcome message. Otherwise, you may want to display a Login button.</p></li>
+<li><p>If your current physical location is displayed on the map, you may want to display a pin icon.</p></li>
+<li><p>If there are results for your search, you may want to display a list. Otherwise, you may want to display a &quot;no results found&quot; message.</p></li>
+</ul>
+<p>Please see <a href="https://reactjs.org/docs/conditional-rendering.html">React - Conditional Rendering</a> for up to date examples.</p>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="exercise"></a><a href="#exercise" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exercise:</h4>
+<ul>
+<li><p>Create a Login View and a Users View component.</p></li>
+<li><p>On the Login View, display a &quot;Login&quot; button.</p></li>
+<li><p>Clicking on the login button should hide the Login View and display the Users View.</p></li>
+<li><p>Assign data below to a variable, as test data.</p></li>
+<li><p>Render all items in the Array in the Users View. The data represents test users. Data available at <a href="https://randomuser.me/api/?results=20">randomuser.me</a></p></li>
+<li><p>Ensure that you create a &quot;Profile&quot; component - don't render everything in one giant component.</p></li>
+<li><p>Display different icons for male/female users.</p></li>
+<li><p>Display an American flag for american users, and a Canadian one for Canadians. You can use the &quot;nat&quot; property of the user object to determine this.</p></li>
+<li><p>Display non-sensitive data in your Profile component, such as name, username, image, address, etc.</p></li>
+</ul>
+<pre><code class="hljs css language-js">{
+<span class="hljs-string">"results"</span>: [
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"male"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mr"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"nicolas"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"nuñez"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"1360 calle nebrija"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"santiago de compostela"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"cantabria"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">71272</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"nicolas.nuñez@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"yellowleopard159"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"griffey"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"sc8fpt1q"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"e0287fc312f7d9750c9d8846855d913f"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"433a0dd9b61fca959e9f1f5be11b5304fce5e4e4"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"4bf576c681ce228b5a6d6a4b77e202fc97803c20080ecfc6836494b4998c365e"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1964-05-13 18:42:45"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2011-06-20 00:11:54"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"989-574-382"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"635-337-917"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"DNI"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"09220882-L"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/men/51.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/men/51.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/men/51.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"ES"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"emily"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"bouchard"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"6148 lake of bays road"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"tecumseh"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"nunavut"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">18594</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"emily.bouchard@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"blackbear212"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"bender"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"e2kdDqVS"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"37f36d08a9500cd10903fd947a8a7fd6"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"2ea6854bc9c24470048c6a3b2aa579193fd28a2a"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"c9b56f4ee129c1119e2de5f07abf77919f06f8ce9128491d7162863c9f333bd4"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1975-12-24 03:32:42"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2007-01-09 20:48:01"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"210-496-3268"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"741-554-7872"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-literal">null</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/15.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/15.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/15.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"CA"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"marina"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"lemke"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"3725 burgstraße"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"landsberg a. lech"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"sachsen"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">82638</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"marina.lemke@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"beautifulelephant278"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"thick"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"WQihoU0o"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"fe6ca5798f3a475092ed7cc79d401a09"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"76f5de1e55d41257593c1b3febe2a47f5c414fe6"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"585022ffd750ee18f2b7d0ca779cf92ac144d5f23c391701ab0b72e77817dfcf"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1952-03-06 15:35:11"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2004-12-29 00:41:11"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"0444-7885783"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"0177-0142026"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-literal">null</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/62.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/62.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/62.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"DE"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"miss"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"rosario"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"diaz"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"2010 paseo de extremadura"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"pontevedra"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"cantabria"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">71050</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"rosario.diaz@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"yellowgorilla555"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"triton"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"9r5KfpWI"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"5f517d924e1f5326be316ff4b815342c"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"7d84624a016ed0eb696f228d5f03e48cab73b67e"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"9d5b5b16972f5a23bbf2607b2826cffe78a5dbd00f1998dd74f693b495316351"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1986-05-16 17:25:40"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2010-11-22 21:17:48"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"970-855-889"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"604-303-614"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"DNI"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"68385021-A"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/63.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/63.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/63.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"ES"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"miss"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"bernice"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"alexander"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"7594 samaritan dr"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"tallahassee"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"south dakota"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">51833</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"bernice.alexander@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"whiterabbit124"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"indy"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"k9jCrd51"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"38f6f6a180ee7b062c095bf7ac363ab9"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"2ae9f460d118d3bb9ac3d379f97521ab1802e52f"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"cce41b89556d002212771f0fcbbae489bff61ebc0d4e81cd9e2d6aec7e70e85d"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1968-06-17 19:12:04"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2010-02-24 16:28:45"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"(981)-462-4529"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"(044)-933-3125"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"SSN"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"724-19-7038"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/89.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/89.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/89.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"US"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"maëlle"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"muller"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"9777 avenue de l'abbé-roussel"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"nantes"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"loir-et-cher"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">34094</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"maëlle.muller@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"bigduck983"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"eeyore"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"diEq9uqK"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"28680d52149f8854a9034cbccc479b49"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"1e1870a2fc2871de3cbe96904aa20e9b0eb6ad47"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"a1c0fbd8117ddc1729febdd6dccfc25a776dbeb9b3b09800ef245b584cee4f29"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1989-01-09 14:51:18"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2012-09-20 10:56:38"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"01-35-02-69-67"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"06-04-81-77-84"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"INSEE"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"289070316463 90"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/14.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/14.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/14.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"FR"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"male"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mr"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"simon"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"lecomte"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"8423 avenue de l'abbé-roussel"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"argenteuil"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"oise"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">47405</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"simon.lecomte@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"brownfish222"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"camel"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"TkDWiHeh"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"0d188d3208f28203aa0a0b1067bdc6c5"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"10b86fc23b6499d330f0bc94e990c43f98bbd09d"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"b40f805df48c2556f9ffb00e1580093009df4f7338f5ff10fde0853efeead2b3"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1974-09-26 01:07:59"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2009-08-17 06:50:05"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"05-71-85-31-65"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"06-07-78-52-33"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"INSEE"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"174828763377 45"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/men/21.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/men/21.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/men/21.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"FR"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"inga"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"franke"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"2059 mühlweg"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"neunkirchen"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"mecklenburg-vorpommern"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">63776</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"inga.franke@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"goldengorilla435"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"color"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"ho2pHvy8"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"376632770ae4c9725ece7625fdf52329"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"1c6827105e31692332bb2f2a6237c20adb8542c5"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"0f8c93b25f4f0ac5a80971261abe85923596e2c2ffa547b178137f114517e0fd"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1960-04-30 09:13:15"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2014-01-01 06:09:12"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"0443-6487797"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"0177-3413180"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-literal">null</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/13.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/13.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/13.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"DE"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mademoiselle"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"laura"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"perez"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"5422 rue de l'abbé-grégoire"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"morges 1"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"schaffhausen"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">7572</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"laura.perez@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"orangeladybug405"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"maureen"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"OUYxejDz"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"6a7202d95297152eab357dd33cb6c477"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"d2df3d7e0579e5061521c2bd7321a2f0f6349b2e"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"568cfe5349e0bb74ad6bd3e5924240a914aafc9a349bd104ed5e5c7472478377"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1979-02-27 01:33:43"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2008-09-12 08:12:06"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"(285)-826-8380"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"(180)-506-5829"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"AVS"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"756.NKSC.VPKM.12"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/37.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/37.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/37.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"CH"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"carolina"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"lorenzo"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"6204 calle del barquillo"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"gijón"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"la rioja"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">40122</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"carolina.lorenzo@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"whitegoose183"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"emerson"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"K9OAI6vv"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"d5349e2efbc69725f379743aea81b2e5"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"480a2f0ffda3b30c36cd720c754ae999b488960e"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"4e0f18f53a4e3c0b9b09880a79ae5cffec4feffded33d7e9dd1d8dbfa4095bf6"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1994-04-29 09:49:02"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2004-01-20 12:54:24"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"936-242-843"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"642-805-775"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"DNI"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"07202300-H"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/31.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/31.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/31.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"ES"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"siiri"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"joki"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"8122 reijolankatu"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"isokyrö"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"southern savonia"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">80325</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"siiri.joki@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"crazyswan897"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"castro"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"1DJXPG6K"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"7752a82b5fae0e0b242d0e23586ad418"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"33003a8a028397e2c9e5fae8c9290d908c83a132"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"419e75361f0cf6cdd5f6b9372f959c32f449c31ff1302c1d6a3e87390184395e"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1952-04-18 17:13:09"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2009-07-18 09:56:19"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"04-948-311"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"043-827-96-22"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"HETU"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"852-048D"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/5.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/5.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/5.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"FI"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"miss"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"mestan"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"dizdar"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"5323 vatan cd"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"kocaeli"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"şırnak"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">66079</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"mestan.dizdar@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"orangepanda303"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"met2002"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"Xjm4QQbm"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"7cccfde3a177885710401be1aed31dc7"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"6367a170d54a8d3e485dafeb2a611183a1bbe1ed"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"1b783d4c03114a74b10319cb2c7fd613eff1659a24128d63ff99c9ccfcc9a995"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1988-12-03 09:31:11"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2014-03-06 23:08:18"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"(111)-906-1290"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"(712)-494-6541"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-literal">null</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/93.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/93.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/93.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"TR"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"miss"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"amber"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"grant"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"7704 the avenue"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"armagh"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"grampian"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-string">"Z49 3GF"</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"amber.grant@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"silverswan559"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"card"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"yhwsHC6h"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"9e65967a293f7ffe9239a97bc7ba0752"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"d9791a35c6c48f878d4a327b6675e3b257c9aa67"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"12974b08e326555c535fb9ca77f928f4b7c56cbd98bedcb6998a7d2593e4a8c3"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1963-10-18 05:16:20"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2004-05-22 15:05:09"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"027 2248 5271"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"0754-058-659"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"NINO"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"AJ 49 80 13 N"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/82.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/82.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/82.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"GB"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"ms"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"pippa"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"edwards"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"8965 coronation avenue"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"greymouth"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"wellington"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">37986</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"pippa.edwards@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"silverleopard245"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"rookie"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"yIS7NMqR"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"870e25c2c3cd95ffb0cdd2dfd1668e54"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"8cb9c99c2ff818187c6016423c455fe63048a542"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"891a1d5f8d676457d6cb8bce25ee5c19aac6eaa57f67b7963fe4ec76fbecf35d"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1992-12-18 19:37:11"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2006-10-17 02:24:38"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"(477)-291-0297"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"(820)-338-9480"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-literal">null</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/23.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/23.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/23.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"NZ"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"molly"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"gutierrez"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"3120 the green"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"cambridge"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"county tyrone"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-string">"W9 6TR"</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"molly.gutierrez@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"blackkoala779"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"kitten"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"IkNIO51n"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"6ba76deedc2640361353c54e1017dd7a"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"f9b23d07d2b9dad4057febdcc6538f3747ee42b1"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"d48a13fa4f20c42574fd71cc153677a6a88266903113d64750beffbf8222de78"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1969-02-15 13:08:06"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2007-01-01 01:24:15"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"017687 21800"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"0742-389-722"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"NINO"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"KS 91 30 88 E"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/88.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/88.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/88.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"GB"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"pamela"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"holt"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"6638 plum st"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"stamford"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"florida"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">25455</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"pamela.holt@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"crazydog495"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"ramsey"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"lVh2c33c"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"db311c21e2cf2c6b7a499aef03cd50de"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"6adacc41b3184814517e359c1b19efa1f0595e89"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"abc6f56eb6d063e32fe001a4b0b0395fe044dfa7f354fb0d0f49c84c5dbf20e0"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1956-01-20 08:48:45"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2014-09-21 05:48:14"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"(455)-195-4474"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"(077)-886-9816"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"SSN"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"330-20-4007"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/50.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/50.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/50.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"US"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"female"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mrs"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"allie"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"fletcher"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"8811 chester road"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"portsmouth"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"hampshire"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-string">"T6 5UA"</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"allie.fletcher@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"brownfish445"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"duan"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"3J6VC26c"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"b9679ef6f5d1ac8a16c1dc036e24f910"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"1bf78d45d49c9fc4cec0bf95b3ba4fad569235eb"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"b71354b2de9e814ac525ebb14f1dba6cc565756c463788b420c8dedd495fd400"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1960-02-29 20:30:54"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2010-05-28 20:45:02"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"015242 55263"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"0735-153-791"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"NINO"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"HY 04 44 56 M"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/women/18.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/women/18.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/women/18.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"GB"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"male"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mr"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"alberto"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"taylor"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"9145 walnut hill ln"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"cairns"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"queensland"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">8418</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"alberto.taylor@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"crazybutterfly741"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"646464"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"ccBb6gPw"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"fe77d136b1640524a1bb13f59cd4bcfd"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"9cffd5fc51ca68f7b80e6bd96c1c0e5e1fafb38d"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"dcbde783f40c3003e28cc51a90d849a7c1da9bfa18a807691bae03c3ee1346f1"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1987-12-01 14:23:08"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2005-10-25 12:36:45"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"05-9059-9157"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"0436-944-702"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"TFN"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"552727667"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/men/4.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/men/4.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/men/4.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"AU"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"male"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mr"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"arthur"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"henry"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"9161 rue de la gare"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"rueil-malmaison"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"val-de-marne"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">24567</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"arthur.henry@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"heavyduck750"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"florence"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"cizLSbSP"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"c24ee38c5d43730aa83acbe8f04febd3"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"521f96d35db28f84619027e8189498d62a471cb8"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"5994806c87b8d2b660393f5b61d4f5bfbb98af12ec35fb4901e351fd4990e40d"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1987-12-11 22:47:12"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2011-01-11 20:21:53"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"03-98-84-37-76"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"06-00-79-08-47"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"INSEE"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"1871129918181 55"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/men/54.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/men/54.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/men/54.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"FR"</span>
+},
+{
+<span class="hljs-string">"gender"</span>: <span class="hljs-string">"male"</span>,
+<span class="hljs-string">"name"</span>: {
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"mr"</span>,
+<span class="hljs-string">"first"</span>: <span class="hljs-string">"willie"</span>,
+<span class="hljs-string">"last"</span>: <span class="hljs-string">"george"</span>
+},
+<span class="hljs-string">"location"</span>: {
+<span class="hljs-string">"street"</span>: <span class="hljs-string">"9592 homestead rd"</span>,
+<span class="hljs-string">"city"</span>: <span class="hljs-string">"tamworth"</span>,
+<span class="hljs-string">"state"</span>: <span class="hljs-string">"australian capital territory"</span>,
+<span class="hljs-string">"postcode"</span>: <span class="hljs-number">3245</span>
+},
+<span class="hljs-string">"email"</span>: <span class="hljs-string">"willie.george@example.com"</span>,
+<span class="hljs-string">"login"</span>: {
+<span class="hljs-string">"username"</span>: <span class="hljs-string">"blackrabbit176"</span>,
+<span class="hljs-string">"password"</span>: <span class="hljs-string">"julien"</span>,
+<span class="hljs-string">"salt"</span>: <span class="hljs-string">"QjsSFYJd"</span>,
+<span class="hljs-string">"md5"</span>: <span class="hljs-string">"2330f75175b5c096e96dd08fbfe446f2"</span>,
+<span class="hljs-string">"sha1"</span>: <span class="hljs-string">"1b273fde71dae7457cf7027ecf202b65e352d0b5"</span>,
+<span class="hljs-string">"sha256"</span>: <span class="hljs-string">"c58242170259290e9a57552265cae5dbb7b7e8c8a5b3288bb45ac3b9c82a4554"</span>
+},
+<span class="hljs-string">"dob"</span>: <span class="hljs-string">"1992-02-03 08:24:22"</span>,
+<span class="hljs-string">"registered"</span>: <span class="hljs-string">"2005-06-30 16:37:36"</span>,
+<span class="hljs-string">"phone"</span>: <span class="hljs-string">"07-2988-9280"</span>,
+<span class="hljs-string">"cell"</span>: <span class="hljs-string">"0429-787-978"</span>,
+<span class="hljs-string">"id"</span>: {
+<span class="hljs-string">"name"</span>: <span class="hljs-string">"TFN"</span>,
+<span class="hljs-string">"value"</span>: <span class="hljs-string">"997854937"</span>
+},
+<span class="hljs-string">"picture"</span>: {
+<span class="hljs-string">"large"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/men/56.jpg"</span>,
+<span class="hljs-string">"medium"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/med/men/56.jpg"</span>,
+<span class="hljs-string">"thumbnail"</span>: <span class="hljs-string">"https://randomuser.me/api/portraits/thumb/men/56.jpg"</span>
+},
+<span class="hljs-string">"nat"</span>: <span class="hljs-string">"AU"</span>
+}
+],
+<span class="hljs-string">"info"</span>: {
+<span class="hljs-string">"seed"</span>: <span class="hljs-string">"5a7ae06891dec734"</span>,
+<span class="hljs-string">"results"</span>: <span class="hljs-number">20</span>,
+<span class="hljs-string">"page"</span>: <span class="hljs-number">1</span>,
+<span class="hljs-string">"version"</span>: <span class="hljs-string">"1.1"</span>
+}
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/COMP-2913/docs/lists"><span class="arrow-prev">← </span><span>Lists</span></a><a class="docs-next button" href="/COMP-2913/docs/forms"><span>Forms</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>BCIT</h5><a href="https://learn.bcit.ca/d2l/home/555034">D2L Course Home</a><a href="https://www.bcit.ca/study/courses/comp2913">Course sign up</a></div><div><h5>Helpful Resources</h5><a href="https://reactjs.org/">React Docs</a><a href="https://github.com/getify/You-Dont-Know-JS">You don&#x27;t know JS Book Series</a><a href="http://es6-features.org" target="_blank" rel="noreferrer noopener">ECMAScript 6 Features</a></div><div><h5>Instructor</h5><div class="footer_instructor"><img class="footer__instructor-avatar" src="/img/daniel_takeuchi.jpg"/><address class="footer__instructor-details"><h5>Daniel Takeuchi</h5>Software Engineer @ <a href="https://flipboard.com">Flipboard</a><br/>Instructor @ <a href="https://flipboard.com">BCIT</a><br/><a href="mailto:dtakeuchi@my.bcit.ca">dtakeuchi@my.bcit.ca</a></address></div></div></section><a href="https://bcit.ca/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/COMP-2913/img/bcit-logo.png" alt="BCIT"/></a><section class="copyright">Copyright © 2019 Daniel Kiyohiko Takeuchi</section></footer></div></body></html>
