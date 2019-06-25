@@ -27,7 +27,7 @@
     "ECMAScript": [
       "es6-introduction",
       "es6-constants",
-      "es6-block-scoped-vars",
+      "es6-block-scope-vars",
       "es6-arrow-functions",
       "es6-default-params",
       "es6-string-interpolation",
