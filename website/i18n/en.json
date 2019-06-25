@@ -44,6 +44,42 @@
       "doc3": {
         "title": "This is document number 3"
       },
+      "es6-arrow-functions": {
+        "title": "Arrow Functions"
+      },
+      "es6-block-scope-vars": {
+        "title": "Block Scoped Variables"
+      },
+      "es6-class-definition": {
+        "title": "Class Definition"
+      },
+      "es6-constants": {
+        "title": "Constants"
+      },
+      "es6-default-params": {
+        "title": "Default Parameters"
+      },
+      "es6-introduction": {
+        "title": "Introduction"
+      },
+      "es6-method-properties": {
+        "title": "Method Properties"
+      },
+      "es6-object-assignment": {
+        "title": "Object assignment"
+      },
+      "es6-object-matching": {
+        "title": "Object Matching"
+      },
+      "es6-promises": {
+        "title": "Promises"
+      },
+      "es6-property-shorthand": {
+        "title": "Property Shorthand"
+      },
+      "es6-string-interpolation": {
+        "title": "String Interpolation"
+      },
       "event-handlers": {
         "title": "Event Handlers"
       },
@@ -99,14 +135,14 @@
     },
     "links": {
       "React": "React",
-      "ECMAScript 6": "ECMAScript 6",
+      "ECMAScript": "ECMAScript",
       "Course Outline": "Course Outline"
     },
     "categories": {
       "Introduction to React": "Introduction to React",
       "Getting started": "Getting started",
       "Basic Concepts": "Basic Concepts",
-      "First Category": "First Category",
+      "ECMAScript 6": "ECMAScript 6",
       "Course Outline": "Course Outline"
     }
   },

@@ -20,15 +20,15 @@ How does React know where to render your application in the html?
 
 Look at public/index.html. If you are familiar with Web Development, you will know that this is usually the entry point for a website. Look for the html line below:
 
-{% highlight html %}
+```html
 <div id="root"></div>
-{% endhighlight %}
+```
 
 Now look at src/index.js. In this project, this file is the entry point for your JavaScript application.
 
-{% highlight js %}
+```js
 ReactDOM.render(<App />, document.getElementById('root'));
-{% endhighlight %}
+```
 
 Are you starting to see the connection? The JavaScript is rendering your "App" component, into the html element with id "root". Very rarely you will need to modify this public/index.html and src/index.js files. Just keep in mind that there's no magic going on here. At it's most basic form, React is adding html code into your index.html file, by looking at your App component. That's it!
 

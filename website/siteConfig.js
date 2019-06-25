@@ -40,7 +40,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'what-is-react', label: 'React'},
-    {doc: 'doc4', label: 'ECMAScript 6'},
+    {doc: 'es6-introduction', label: 'ECMAScript'},
     {doc: 'course-description', label: 'Course Outline'}
   ],
 

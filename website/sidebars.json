@@ -24,7 +24,20 @@
     ]
   },
   "es6": {
-    "First Category": ["doc4", "doc5"]
+    "ECMAScript": [
+      "es6-introduction",
+      "es6-constants",
+      "es6-block-scoped-vars",
+      "es6-arrow-functions",
+      "es6-default-params",
+      "es6-string-interpolation",
+      "es6-property-shorthand",
+      "es6-method-properties",
+      "es6-object-matching",
+      "es6-class-definition",
+      "es6-object-assignment",
+      "es6-promises"
+    ]
   },
   "course_outline": {
     "Course Outline": [
