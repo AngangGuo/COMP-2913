@@ -34,16 +34,6 @@
       "create-react-app": {
         "title": "Create React App"
       },
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
-      },
-      "doc2": {
-        "title": "document number 2"
-      },
-      "doc3": {
-        "title": "This is document number 3"
-      },
       "es6-arrow-functions": {
         "title": "Arrow Functions"
       },
