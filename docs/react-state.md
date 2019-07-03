@@ -32,7 +32,7 @@ If you think about it, software cannot exist without state. Otherwise they'd jus
 In React, there are a few different ways that you can create Components. We've learned one of them, which will have you covered for all our cases. We will cover other ways of creating components at a future class.
 If you are using JavaScript's `class` constructor to create components, here is how you can implement state:
 
-{% highlight react %}
+```js
 import React, { Component } from 'react';
 
 class CurrentDate extends Component {
@@ -53,7 +53,7 @@ class CurrentDate extends Component {
 }
 
 export default CurrentDate;
-{% endhighlight %}
+```
 
 If you render the component above, you will notice that the current date gets displayed every time you refresh your browser. So what is happening on the code above?
 Before reading the explanation below, take a few minutes to study the snippe above, and see if you can make sense of it.
