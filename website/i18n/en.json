@@ -9,6 +9,9 @@
         "title": "Alternatives to React",
         "sidebar_label": "Alternatives"
       },
+      "async-requests": {
+        "title": "Asynchronous Requests"
+      },
       "before-getting-started": {
         "title": "Before getting started"
       },
@@ -18,6 +21,9 @@
       },
       "bootstrapping": {
         "title": "Bootstrapping"
+      },
+      "component-children": {
+        "title": "Component Children"
       },
       "component-lifecycle": {
         "title": "Component Lifecycle"
@@ -100,6 +106,12 @@
       },
       "lists": {
         "title": "Lists"
+      },
+      "npm-packages": {
+        "title": "Installing npm packages"
+      },
+      "prop-types": {
+        "title": "Default Props and Typechecking"
       },
       "react-components": {
         "title": "React Components"

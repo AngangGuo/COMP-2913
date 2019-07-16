@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "Class 4: Asynchronous requests"
-date:   2019-06-04 01:30:00 +0700
+id: "async-requests"
+title: "Asynchronous Requests"
 ---
 
 #### Making Asynchronous HTTP requests in React

@@ -1,14 +1,13 @@
 ---
-layout: post
-title:  "Class 4: Default Props and type-checking"
-date:   2019-06-04 00:30:00 +0700
+id: "prop-types"
+title: "Default Props and Typechecking"
 ---
 
 #### Default Props
 
 For React components that you create, you may have default values for some specific props for that component.
 
-{% highlight react %}
+```js
 import React, { Component } from 'react';
 
 class Profile extends Component {
@@ -27,7 +26,7 @@ Profile.defaultProps = {
 };
 
 export default Profile;
-{% endhighlight %}
+```
 
 If you create an instance of the Component above, without specifying the image url for the profile, it will use the fallback image specified instead. Not all props need a default value, although it's good practice to specify default values for props that aren't required.
 
@@ -41,7 +40,7 @@ For large applications with hundreds to thousands of custom Components, type-che
 
 Here's a simple example:
 
-{% highlight react %}
+```js
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -68,7 +67,7 @@ Profile.defaultProps = {
 };
 
 export default Profile;
-{% endhighlight %}
+```
 
 Read more about [Type-checking with React](https://reactjs.org/docs/typechecking-with-proptypes.html) here.
 

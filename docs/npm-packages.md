@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "Class 4: Installing npm packages"
-date:   2019-06-04 01:00:00 +0700
+id: "npm-packages"
+title: "Installing npm packages"
 ---
 
 #### What is npm?
@@ -18,11 +17,11 @@ Usually, your project dependencies are listed in **package.json**, at the root o
 
 #### How to install/remove libraries from my project?
 
-{% highlight bash %}
+```
 # installs the moment package and adds it to package.json
 npm install moment --save
 # removes moment from project and package.json
 npm uninstall moment
-{% endhighlight %}
+```
 
 ---

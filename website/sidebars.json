@@ -8,7 +8,8 @@
     ],
     "Getting started": [
       "before-getting-started",
-      "create-react-app"
+      "create-react-app",
+      "npm-packages"
     ],
     "Basic Concepts": [
       "bootstrapping",
@@ -20,7 +21,10 @@
       "event-handlers",
       "lists",
       "conditional-rendering",
-      "forms"
+      "forms",
+      "component-children",
+      "prop-types",
+      "async-requests"
     ]
   },
   "es6": {
