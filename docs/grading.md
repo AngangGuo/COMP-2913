@@ -20,13 +20,48 @@ All marks related to labs, assignments, quizzes and tests will be available thro
 
 ---
 
-### Submitting Homework
-All Labs, Assignments and Exam should be submitted through [Desire2Learn (learn.bcit.ca)](learn.bcit.ca).
-There will be a Dropbox for your course. It can be located at: COMP2913 -> Activities -> Assignments. Each lab, assignment and exam will have their own directories. Always zip your deliverables, and rename the file in this format: lab1_firstname_lastname.zip
-You would be surprised by how often deliverables are handed in without a name. Marks will be deducted if no name is provided.
-Ideally, please try to submit your deliverables on time. I’ll be as flexible as possible, as I know students also have other important priorities. It would really help me though, if you strive to meet the given deadlines. For Project 3, the due date is non-negotiable, as I also have a deadline to submit final marks to Administration.
-This also goes with submitting the same assignment multiple times. I will only mark the latest one submitted, but I would also appreciate if this is avoided as much as possible.
-Searching for help online is okay and sometimes, necessary. We will learn the basic building blocks necessary for each assignment in class, but it is up to you to apply your knowledge and creativity to finding solutions.
-Copy/pasting code from online tutorials is not recommended. You will not learn much by doing it so, and often, they don't fully fulfill the requirements for the given assignments.
+### Marking criteria
+
+You will be marked according to the criteria below:
+
+| Breakdown                      |       |
+| :----------------------------- | :---- |
+| Application works as requested | 50%   |
+| Clean, readable code           | 15%   |
+| Applied good structure         | 30%   |
+| Submitted project as requested | 5%    |
+
+---
+
+#### Application works as requested
+
+Does it meet all functional requirements?
+
+---
+
+#### Clean, readable code
+
+Is the code clean and concise? Are the variables named appropriately? Does the code follow a standard? (eg. proper code line alignment, consistent standards). Is there commented out code that is not being used? Good code is easy to understand and is not complicated for the sake of being complex.
+
+---
+
+#### Applied good structure
+
+Did you follow good coding and React practices? Did you apply concepts learned in class? Avoid copy/pasting from other websites, sometimes they use older versions of React, other libraries, etc. Feel free to read and learn from them, but only transfer to your code what you understand.
+
+---
+
+#### Submitted project as requested
+
+Did you submit your files as specified and on time? Is your name on the project?
+
+---
+
+#### Submitting Projects/Final
+
+In [D2L](http://learn.bcit.ca), look for the React course, and select Assignments. There should be folders for each project.
+Ensure that you **do not include** the node_modules folder in your project when submitting.
+Zip your React app folder and name it {projectNumber}_{firstName}_{lastName}.
+Eg. project1_daniel_takeuchi.zip
 
 ---
