@@ -1,8 +1,6 @@
 ---
-layout: post
-title:  "Class 5: JavaScript Object Immutability"
-date:   2019-06-11 00:30:00 +0700
-categories: [javascript]
+id: "object-immutability"
+title: "Object Immutability"
 ---
 
 #### What is Immutability?
@@ -12,7 +10,7 @@ In JavaScript, all primitive data types are immutable.
 
 Example:
 
-{% highlight js %}
+```js
 let a = 'test';
 let b = a;
 a = a.toUpperCase();
@@ -20,11 +18,11 @@ a = a.toUpperCase();
 console.log(a) // test
 console.log(b) // TEST
 console.log(a === b) // false
-{% endhighlight %}
+```
 
 JavaScript Objects are mutable though. Meaning that they can change value once they are allocated space in memory.
 
-{% highlight js %}
+```js
 let carA = { model: 'Civic' };
 let carB = carA;
 
@@ -32,11 +30,11 @@ a.model = 'Corolla';
 
 console.log(carB.model); // Corolla
 console.log(carA === carB) // true
-{% endhighlight %}
+```
 
 Arrays in JavaScript are actually Object types as well, thus mutable.
 
-{% highlight js %}
+```js
 let a = ['apple', 'banana'];
 let b = a;
 
@@ -44,7 +42,7 @@ a.push('cherry');
 
 console.log(b); // ['apple', 'banana', 'cherry'];
 console.log(a === b) // true
-{% endhighlight %}
+```
 
 ---
 
@@ -52,7 +50,7 @@ console.log(a === b) // true
 
 Consider the code below.
 
-{% highlight js %}
+```js
 let age = 21;
 let person = { name: 'John' };
 
@@ -61,7 +59,7 @@ someFunction(person);
 
 console.log(age);
 console.log(person);
-{% endhighlight %}
+```
 
 What will be outputted to the console on the code above?
 the number 21 will always be outputted.
@@ -69,6 +67,15 @@ As for person, this value could very well be mutated inside of "someFunction", a
 determine the value just from the code above.
 
 As you can imagine, this could cause a lot of confusion for programmers. Some architectural patterns even frown upon mutable objects, Redux being one of them.
+
+---
+
+#### How does this relate to React?
+
+- Renders to the page where elements are added, updated and deleted are based on data changes.
+Performance improvements can be made if components do not need to re-render, when the data has remained the same.
+
+- Mutating state can lead to bugs if the original data was not supposed to change after setState is called.
 
 ---
 

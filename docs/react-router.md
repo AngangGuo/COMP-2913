@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "Class 5: React Router"
-date:   2019-06-11 01:00:00 +0700
+id: "react-router"
+title: "React Router"
 ---
 
 #### What is React Router?

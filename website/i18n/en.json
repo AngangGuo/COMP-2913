@@ -110,11 +110,17 @@
       "npm-packages": {
         "title": "Installing npm packages"
       },
+      "object-immutability": {
+        "title": "Object Immutability"
+      },
       "prop-types": {
         "title": "Default Props and Typechecking"
       },
       "react-components": {
         "title": "React Components"
+      },
+      "react-router": {
+        "title": "React Router"
       },
       "react-state": {
         "title": "State"
@@ -144,6 +150,7 @@
       "Introduction to React": "Introduction to React",
       "Getting started": "Getting started",
       "Basic Concepts": "Basic Concepts",
+      "Advanced Concepts": "Advanced Concepts",
       "ECMAScript": "ECMAScript",
       "Course Outline": "Course Outline"
     }

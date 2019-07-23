@@ -22,9 +22,13 @@
       "lists",
       "conditional-rendering",
       "forms",
+      "async-requests"
+    ],
+    "Advanced Concepts": [
       "component-children",
       "prop-types",
-      "async-requests"
+      "object-immutability",
+      "react-router"
     ]
   },
   "es6": {
