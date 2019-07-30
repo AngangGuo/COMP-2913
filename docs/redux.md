@@ -1,8 +1,6 @@
 ---
-layout: post
-title:  "Redux"
-date:   2019-06-18 00:00:00 +0701
-categories: [react]
+id: "redux"
+title: "Redux"
 ---
 
 #### What is Redux?

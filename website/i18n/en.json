@@ -79,12 +79,6 @@
       "event-handlers": {
         "title": "Event Handlers"
       },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
-      },
       "expectations": {
         "title": "Expectations"
       },
@@ -113,6 +107,9 @@
       "object-immutability": {
         "title": "Object Immutability"
       },
+      "post-comp2913": {
+        "title": "Post COMP-2013"
+      },
       "prop-types": {
         "title": "Default Props and Typechecking"
       },
@@ -124,6 +121,9 @@
       },
       "react-state": {
         "title": "State"
+      },
+      "redux": {
+        "title": "Redux"
       },
       "refund-policy": {
         "title": "Refund Policy"

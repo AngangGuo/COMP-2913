@@ -28,7 +28,9 @@
       "component-children",
       "prop-types",
       "object-immutability",
-      "react-router"
+      "react-router",
+      "redux",
+      "post-comp2913"
     ]
   },
   "es6": {

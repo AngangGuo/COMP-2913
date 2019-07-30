@@ -1,8 +1,6 @@
 ---
-layout: post
-title:  "What's next?"
-date:   2019-06-18 00:00:00 +0700
-categories: [react]
+id: "post-comp2913"
+title: "Post COMP-2013"
 ---
 
 #### COMP-2913 - What's next?
