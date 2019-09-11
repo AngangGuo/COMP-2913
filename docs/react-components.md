@@ -11,17 +11,15 @@ All of your JavaScript code should live inside of the src/ directory. You may ad
 - In your new blank file, type the following out (don't copy and paste. Typing it out will help you remember the React Component structure better.)
 
 ```js
-import React, { Component } from 'react';
+import React from 'react';
 
-class Profile extends Component {
-  render() {
-    return (
-      <div>
-        <img src="some/image/url" />
-        <span>My Name</span>
-      </div>
-    );
-  }
+function Profile() {
+  return (
+    <div>
+      <img src="some/image/url" />
+      <span>My Name</span>
+    </div>
+  );
 }
 
 export default Profile;
@@ -41,17 +39,15 @@ Now let's say we would like to display a Profile for your instructor. Would you 
 This is where "props" come in. By specifying props, you can pass in different values into your Profile component. Example:
 
 ```js
-import React, { Component } from 'react';
+import React from 'react';
 
-class Profile extends Component {
-  render() {
-    return (
-      <div>
-        <img src={this.props.imageUrl} />
-        <span>{this.props.name}</span>
-      </div>
-    );
-  }
+function Profile(props) {
+  return (
+    <div>
+      <img src={props.imageUrl} />
+      <span>{props.name}</span>
+    </div>
+  );
 }
 
 export default Profile;
