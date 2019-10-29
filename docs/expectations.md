@@ -11,7 +11,6 @@ title: "Expectations"
 
 ### How to ask questions
 
-I used to believe that there were no bad questions. Over time, I learned that this is not true.
 To get the most out of this course, and to help the class run as smoothly as possible, please follow these guidelines:
 
 - There are bad questions, but no *dumb* ones, from what I have experienced until now (This may change in the future if I'm proven wrong). If you don't know something, even if very basic, please reach out for help. Everybody has had the same questions at some point in their studies/career. If you're uncomfortable asking in front of the class, feel free to reach out individually. We are all here to learn.
