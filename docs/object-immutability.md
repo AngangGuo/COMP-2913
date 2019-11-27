@@ -15,8 +15,8 @@ let a = 'test';
 let b = a;
 a = a.toUpperCase();
 
-console.log(a) // test
-console.log(b) // TEST
+console.log(a) // TEST
+console.log(b) // test
 console.log(a === b) // false
 ```
 
