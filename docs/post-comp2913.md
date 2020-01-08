@@ -1,6 +1,6 @@
 ---
 id: "post-comp2913"
-title: "Post COMP-2013"
+title: "Post COMP-2913"
 ---
 
 #### COMP-2913 - What's next?

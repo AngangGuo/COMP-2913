@@ -101,7 +101,7 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
-  d2lId: 566740,
+  d2lId: 603933,
 
   // Github Pages Config
   url: 'https://daniel-takeuchi.github.io',
