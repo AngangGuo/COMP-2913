@@ -41,9 +41,7 @@ Note that it is important to be aware of all of the lifecycle methods, but we wi
 
 Note that the comments below are based on the instructor's opinions and experiences, and may not be the only use cases for the lifecycle method above.
 
-- componentWillUnmount() - This is the place to handle any cleanup that your component may require. This includes killing event listeners, timeouts and intervals, which can lead to memory leaks.
-
-- componentDidMount() - This one is also very useful, specifically if you need access to the rendered components as soon as possible. Reasons for this include needing to attach an event listener to an element.
+- componentDidMount() - This one is very useful, specifically if you need access to the rendered components as soon as possible. Reasons for this include needing to attach an event listener to an element. Another good usage for this function is to run "initialization" code, like fetching for data required by the component.
 
 - componentDidUpdate() - It's a good place to manually access the DOM. Also useful for running logic based on props/state changes. Eg. If prop `userId` changes, fetch for data for this new `userId`.
 
