@@ -71,7 +71,7 @@ const siteConfig = {
     ]
   },
   */
-
+  gaTrackingId: 'UA-157955426-1',
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Daniel Kiyohiko Takeuchi`,
 
