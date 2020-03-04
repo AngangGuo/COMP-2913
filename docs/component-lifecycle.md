@@ -49,9 +49,10 @@ Note that the comments below are based on the instructor's opinions and experien
 
 - shouldComponentUpdate() - Mostly used for manual performance improvements, although it should be avoided when possible. Usage of this could potentially mean that you are trying to patch a badly architectured application.
 
-- getDerivedStateFromProps() - This new lifecycle method is invoked after a component is instantiated as well as when it receives new props. It should be able to cover use cases for the deprecated `componentWillReceiveProps()` function.
+- getDerivedStateFromProps() - This lifecycle method is invoked after a component is instantiated as well as when it receives new props. It should be able to cover use cases for the deprecated `componentWillReceiveProps()` function. It should only be used when state needs to change based on changes in props.
+[You Probably Don't Need Derived State](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html)
 
-- getSnapshotBeforeUpdate() - This new lifecycle method is called right before mutations are made (before DOM is updated). This method is often unneeded, but should be able to cover use cases for the deprecated `componentWillUpdate()`.
+- getSnapshotBeforeUpdate() - This lifecycle method is called right before mutations are made (before DOM is updated). This method is often unneeded, but should be able to cover use cases for the deprecated `componentWillUpdate()`. A usage example includes capturing scroll position before it is potentially changed.
 
 ---
 
