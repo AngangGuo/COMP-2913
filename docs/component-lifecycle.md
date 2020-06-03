@@ -29,9 +29,12 @@ According to the official documentation: [React Component - Component Lifecycle]
 
 - [shouldComponentUpdate()](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
 
-- NEW - [getDerivedStateFromProps()](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getderivedstatefromprops)
+- [getDerivedStateFromProps()](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getderivedstatefromprops)
 
-- NEW - [getSnapshotBeforeUpdate()](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getsnapshotbeforeupdate)
+- [getSnapshotBeforeUpdate()](https://reactjs.org/blog/2018/03/27/
+update-on-async-rendering.html#new-lifecycle-getsnapshotbeforeupdate)
+
+- [getDerivedStateFromError()](https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror)
 
 Note that it is important to be aware of all of the lifecycle methods, but we will see limited use in class. Some of the methods above are used for more complex software/business requirements, and some are often used for improving an application's performance. Please read through the documentation above. I will also add my own comments on them below, from my experience using React over the past few years.
 
