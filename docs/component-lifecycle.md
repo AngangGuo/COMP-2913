@@ -15,52 +15,39 @@ According to the official documentation: [React Component - Component Lifecycle]
 
 - DEPRECATED - [componentWillMount()](https://reactjs.org/docs/react-component.html#componentwillmount)
 
-- [componentWillUnmount()](https://reactjs.org/docs/react-component.html#componentwillunmount)
-
-- [componentDidMount()](https://reactjs.org/docs/react-component.html#componentdidmount)
-
 - DEPRECATED - [componentWillReceiveProps()](https://reactjs.org/docs/react-component.html#componentwillreceiveprops)
 
 - DEPRECATED - [componentWillUpdate()](https://reactjs.org/docs/react-component.html#componentwillupdate)
 
+- [componentDidMount()](https://reactjs.org/docs/react-component.html#componentdidmount)
+  Invoked when a component renders for the first time on the page. Great place to run initialization code or make network requests for data.
+
+- [componentWillUnmount()](https://reactjs.org/docs/react-component.html#componentwillunmount)
+  Invoked when a component is about to be removed from the view. Ideal for invalidating timers and canceling pending requests.
+
 - [componentDidUpdate()](https://reactjs.org/docs/react-component.html#componentdidupdate)
+  Invoked right after a render is triggert after an update occurs. Good place to run tasks based on prop changes, as long as setState is not called without a wrapping condition.
 
 - [componentDidCatch()](https://reactjs.org/docs/react-component.html#componentdidcatch)
 
+  Invoked after an error has been thrown by a nested component. Ideal for logging errors.
+
 - [shouldComponentUpdate()](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
+
+  Exists for performance optimization, but can be **VERY** dangerous to use, as it can lead to ambiguous bugs that are hard to track. Avoid as much as possible.
 
 - [getDerivedStateFromProps()](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getderivedstatefromprops)
 
-- [getSnapshotBeforeUpdate()](https://reactjs.org/blog/2018/03/27/
-update-on-async-rendering.html#new-lifecycle-getsnapshotbeforeupdate)
+  Invoked before render is called. Avoid using this method, as it's use cases are rare, usually where the state of the component depends on changes in props over time.
+
+- [getSnapshotBeforeUpdate()](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getsnapshotbeforeupdate)
+
+  Invoked right before the most recent render output is commited to the DOM. Use cases are also rare, avoid when possible. Ideal for capturing visual information, like scroll position and element dimensions.
 
 - [getDerivedStateFromError()](https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror)
 
-Note that it is important to be aware of all of the lifecycle methods, but we will see limited use in class. Some of the methods above are used for more complex software/business requirements, and some are often used for improving an application's performance. Please read through the documentation above. I will also add my own comments on them below, from my experience using React over the past few years.
+  Invoked after an error has been thrown. Ideal for recovering for unexpected errors.
 
----
-
-#### Instructor's Comments
-
-Note that the comments below are based on the instructor's opinions and experiences, and may not be the only use cases for the lifecycle method above.
-
-- componentDidMount() - This one is very useful, specifically if you need access to the rendered components as soon as possible. Reasons for this include needing to attach an event listener to an element. Another good usage for this function is to run "initialization" code, like fetching for data required by the component.
-
-- componentDidUpdate() - It's a good place to manually access the DOM. Also useful for running logic based on props/state changes. Eg. If prop `userId` changes, fetch for data for this new `userId`.
-
-- componentDidCatch() - This is a new lifecycle method. Perfect for displaying a fallback UI or sending crash errors to a remote service.
-
-- shouldComponentUpdate() - Mostly used for manual performance improvements, although it should be avoided when possible. Usage of this could potentially mean that you are trying to patch a badly architectured application.
-
-- getDerivedStateFromProps() - This lifecycle method is invoked after a component is instantiated as well as when it receives new props. It should be able to cover use cases for the deprecated `componentWillReceiveProps()` function. It should only be used when state needs to change based on changes in props.
-[You Probably Don't Need Derived State](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html)
-
-- getSnapshotBeforeUpdate() - This lifecycle method is called right before mutations are made (before DOM is updated). This method is often unneeded, but should be able to cover use cases for the deprecated `componentWillUpdate()`. A usage example includes capturing scroll position before it is potentially changed.
-
----
-
-#### Implementing Lifecycle Example
-
-See the Official Documentation for a good example: [React Component Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
+Note that it is important to be aware of all of the lifecycle methods, but we will see limited use in class. Some of the methods above are used for more complex software/business requirements in very rare cases. Please go over the official documentation for the lastest information.
 
 ---
