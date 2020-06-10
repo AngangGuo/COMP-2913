@@ -20,6 +20,15 @@ All marks related to labs, assignments, quizzes and tests will be available thro
 
 ---
 
+### Quiz Grading criteria
+
+Quizzes are composed of multiple choice, multiple select and true/false questions.
+
+For multiple select questions, partials marks may be awarded for partially correct answers. Note that in such cases, the criteria follows the "Right minus wrong" formula.
+
+[https://documentation.brightspace.com/EN/le/question_library/instructor/grade_options_for_multi_select.htm#:~:text=Right%20minus%20wrong%20%2D%20Users%20receive,cannot%20receive%20a%20negative%20mark.](https://documentation.brightspace.com/EN/le/question_library/instructor/grade_options_for_multi_select.htm#:~:text=Right%20minus%20wrong%20%2D%20Users%20receive,cannot%20receive%20a%20negative%20mark.)
+
+
 ### Marking criteria
 
 You will be marked according to the criteria below:
