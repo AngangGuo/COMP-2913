@@ -29,3 +29,6 @@ Although React is not a full-fledged front-end JavaScript framework, it often is
 - Currently the fastest growing JavaScript “framework”.
 - Generally easier to learn.
 - More adaptive and flexible, as there’s less standards set by the framework itself. This means that more choice is available on what libraries to use to build the base of your application.
+
+Great article on a comparison between Angular, Vue and React:
+[Angular vs Vue vs React](https://www.codeinwp.com/blog/angular-vs-vue-vs-react/)

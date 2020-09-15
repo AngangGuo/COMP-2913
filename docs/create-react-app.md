@@ -6,8 +6,6 @@ title: "Create React App"
 Currently, the easiest way to get started with React is with ["Create React App"](https://github.com/facebookincubator/create-react-app), a project maintained by Facebook. Create React App allows us to scaffold a new React project, with basic configuration and tooling all setup from the get-go.
 
 ```
-// Directory structure (as of October 2017)
-
 my-app
 
 ├── README.md

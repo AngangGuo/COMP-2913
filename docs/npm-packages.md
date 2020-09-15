@@ -19,7 +19,7 @@ Usually, your project dependencies are listed in **package.json**, at the root o
 
 ```
 # installs the moment package and adds it to package.json
-npm install moment --save
+npm install moment
 # removes moment from project and package.json
 npm uninstall moment
 ```

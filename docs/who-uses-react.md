@@ -20,16 +20,18 @@ title: "Who uses React?"
 
 
 - Airbnb
+- Apple
 - Coursera
 - Dropbox
 - Facebook
 - Flipboard
 - Instagram
+- Microsoft
 - Netflix
 - Pinterest
+- Reddit
 - Twitter
 - Uber
+- WhatsApp
 - Wordpress
 - …and thousands more big and small companies
-
-*Source: [React on Github](https://github.com/facebook/react/wiki/sites-using-react)*
