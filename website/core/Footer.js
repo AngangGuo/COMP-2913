@@ -60,7 +60,7 @@ class Footer extends React.Component {
                 <br />
                 Instructor @ <a href="https://flipboard.com">BCIT</a>
                 <br />
-                <a href="mailto:dtakeuchi@my.bcit.ca">dtakeuchi@my.bcit.ca</a>
+                <a href="mailto:dtakeuchi@bcit.ca">dtakeuchi@bcit.ca</a>
               </address>
             </div>
           </div>
