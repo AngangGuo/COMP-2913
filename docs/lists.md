@@ -69,3 +69,7 @@ Please see [React - Lists and Keys](https://reactjs.org/docs/lists-and-keys.html
   }
 ]
 ```
+
+<div style="padding: 32px 0;">
+  <iframe src="https://flipboard.com/@kiyohikot/react-a-beginner-s-introduction-to-dynamic-lists-conditionals-part-3-t2vtrhj6mcsc79un/widget?layout=banner" frameBorder="0" width="100%" height="250" ></iframe>
+</div>

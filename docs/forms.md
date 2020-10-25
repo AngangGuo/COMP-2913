@@ -7,6 +7,11 @@ Please see [React - Forms](https://reactjs.org/docs/forms.html) for up to date e
 
 ---
 
+<div style="padding: 32px 0;">
+  <iframe src="https://flipboard.com/@kiyohikot/react-a-beginner-s-introduction-to-forms-part-4-j3onm52phjdqgpe3/widget?layout=banner" frameBorder="0" width="100%" height="250" ></iframe>
+</div>
+
+
 #### Exercise
 
 Continuing from the Car List exercise, create a form that will allow users to add new items to the car list.
@@ -26,32 +31,3 @@ Continuing from the Car List exercise, create a form that will allow users to ad
   - new/old
 
 - When a new item is added, it should be displayed at the end of the full car list.
-
-<!--
-
-<!---
-
-#### Exercise 2:
-
-- Create a "LoginView" component, and render it under <App />.
-
-- "LoginView" should have an initialState for empty "username" and "password".
-
-- Render an input for your username, and one for your password, nested under a form.
-
-- Also add submit button to the form.
-
-- Use your inputs as controlled inputs, meaning that the source of truth for their value is
-in the component state.
-
-- onSubmit, use the API below to login.
-
-- Display a loading spinner while the login response is pending.
-
-- If the login credentials are wrong, display an invalid credentials message.
-
-- If the login credentials are correct, display a Welcome message instead.
-
-
----
-

@@ -61,3 +61,7 @@ and to use your component with different props:
 ```
 
 See more at: [https://reactjs.org/docs/components-and-props.html](https://reactjs.org/docs/components-and-props.html)
+
+<div style="padding: 32px 0;">
+  <iframe src="https://flipboard.com/@kiyohikot/react-a-beginner-s-introduction-to-components-part-2-hku6m42doovuqboq/widget?layout=banner" frameBorder="0" width="100%" height="250" ></iframe>
+</div>
