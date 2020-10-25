@@ -35,3 +35,5 @@ title: "Who uses React?"
 - WhatsApp
 - Wordpress
 - …and thousands more big and small companies
+
+[See more companies using React](https://stackshare.io/react)

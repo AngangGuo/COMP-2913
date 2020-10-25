@@ -11,9 +11,8 @@ All marks related to labs, assignments, quizzes and tests will be available thro
 
 | Deliverable |       |
 | :---------- | :---- |
-| Quiz 1      | 10%   |
-| Quiz 2      | 10%   |
-| Quiz 3      | 10%   |
+| Quiz 1      | 15%   |
+| Quiz 2      | 15%   |
 | Project 1   | 20%   |
 | Project 2   | 20%   |
 | Final       | 30%   |

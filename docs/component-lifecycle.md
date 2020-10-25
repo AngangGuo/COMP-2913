@@ -48,6 +48,22 @@ According to the official documentation: [React Component - Component Lifecycle]
 
   Invoked after an error has been thrown. Ideal for recovering for unexpected errors.
 
-Note that it is important to be aware of all of the lifecycle methods, but we will see limited use in class. Some of the methods above are used for more complex software/business requirements in very rare cases. Please go over the official documentation for the lastest information.
+**Note that it is important to be aware of all of the lifecycle methods, but in most cases, these are the ones that will be used the most:**
+
+- componentDidMount
+
+- componentWillUnmount
+
+- componentDidUpdate
+
+**And these you should avoid when possible (even the official React documentation advises so). In most cases, there are alternative ways to handle with the the lifecycle events above, as well as the component's constructor.**
+
+- shouldComponentUpdate
+
+- getDerivedStateFromProps
+
+- getSnapshotBeforeUpdate
+
+
 
 ---
