@@ -56,9 +56,9 @@ class Footer extends React.Component {
               <img className="footer__instructor-avatar" src={`${this.props.config.baseUrl}img/daniel_takeuchi.jpg`} />
               <address className="footer__instructor-details">
                 <h5>Daniel Takeuchi</h5>
-                Software Engineer @ <a href="https://flipboard.com">Flipboard</a>
+                Software Engineer @ <a href="https://chime.com">Chime</a>
                 <br />
-                Instructor @ <a href="https://flipboard.com">BCIT</a>
+                Instructor @ <a href="https://bcit.ca">BCIT</a>
                 <br />
                 <a href="mailto:dtakeuchi@bcit.ca">dtakeuchi@bcit.ca</a>
               </address>
