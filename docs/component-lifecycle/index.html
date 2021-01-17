@@ -67,6 +67,7 @@
 <blockquote>
 <p>Each component has several “lifecycle methods” that you can override to run code at particular times in the process. Methods prefixed with &quot;will&quot; are called right before something happens, and methods prefixed with &quot;did&quot; are called right after something happens.</p>
 </blockquote>
+<p>Note that <strong>only</strong> Class Components are able to use these lifecycle methods. Function components have alternatives available, which we won't cover in this course.</p>
 <hr>
 <h4><a class="anchor" aria-hidden="true" id="available-lifecycle-methods"></a><a href="#available-lifecycle-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Available Lifecycle Methods</h4>
 <ul>
@@ -79,16 +80,16 @@ Invoked when a component renders for the first time on the page. Great place to 
 Invoked when a component is about to be removed from the view. Ideal for invalidating timers and canceling pending requests.</p></li>
 <li><p><a href="https://reactjs.org/docs/react-component.html#componentdidupdate">componentDidUpdate()</a>
 Invoked right after a render is triggert after an update occurs. Good place to run tasks based on prop changes, as long as setState is not called without a wrapping condition.</p></li>
-<li><p><a href="https://reactjs.org/docs/react-component.html#componentdidcatch">componentDidCatch()</a></p>
-<p>Invoked after an error has been thrown by a nested component. Ideal for logging errors.</p></li>
-<li><p><a href="https://reactjs.org/docs/react-component.html#shouldcomponentupdate">shouldComponentUpdate()</a></p>
-<p>Exists for performance optimization, but can be <strong>VERY</strong> dangerous to use, as it can lead to ambiguous bugs that are hard to track. Avoid as much as possible.</p></li>
-<li><p><a href="https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getderivedstatefromprops">getDerivedStateFromProps()</a></p>
-<p>Invoked before render is called. Avoid using this method, as it's use cases are rare, usually where the state of the component depends on changes in props over time.</p></li>
-<li><p><a href="https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getsnapshotbeforeupdate">getSnapshotBeforeUpdate()</a></p>
-<p>Invoked right before the most recent render output is commited to the DOM. Use cases are also rare, avoid when possible. Ideal for capturing visual information, like scroll position and element dimensions.</p></li>
-<li><p><a href="https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror">getDerivedStateFromError()</a></p>
-<p>Invoked after an error has been thrown. Ideal for recovering for unexpected errors.</p></li>
+<li><p><a href="https://reactjs.org/docs/react-component.html#componentdidcatch">componentDidCatch()</a>
+Invoked after an error has been thrown by a nested component. Ideal for logging errors.</p></li>
+<li><p><a href="https://reactjs.org/docs/react-component.html#shouldcomponentupdate">shouldComponentUpdate()</a>
+Exists for performance optimization, but can be <strong>VERY</strong> dangerous to use, as it can lead to ambiguous bugs that are hard to track. Avoid as much as possible.</p></li>
+<li><p><a href="https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getderivedstatefromprops">getDerivedStateFromProps()</a>
+Invoked before render is called. Avoid using this method, as it's use cases are rare, usually where the state of the component depends on changes in props over time.</p></li>
+<li><p><a href="https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getsnapshotbeforeupdate">getSnapshotBeforeUpdate()</a>
+Invoked right before the most recent render output is commited to the DOM. Use cases are also rare, avoid when possible. Ideal for capturing visual information, like scroll position and element dimensions.</p></li>
+<li><p><a href="https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror">getDerivedStateFromError()</a>
+Invoked after an error has been thrown. Ideal for recovering for unexpected errors.</p></li>
 </ul>
 <p><strong>Note that it is important to be aware of all of the lifecycle methods, but in most cases, these are the ones that will be used the most:</strong></p>
 <ul>

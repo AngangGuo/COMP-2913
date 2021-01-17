@@ -63,6 +63,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Create React App</h1></header><article><div><span><p>Currently, the easiest way to get started with React is with <a href="https://github.com/facebookincubator/create-react-app">&quot;Create React App&quot;</a>, a project maintained by Facebook. Create React App allows us to scaffold a new React project, with basic configuration and tooling all setup from the get-go.</p>
+<p>Note that create-react-app is not part of the React library. It is a tool used to setup React applications without having to configure every aspect of a modern application, like code transpiling, minification, modularization, unit testing, local environment servers, hot-reloading and many others.</p>
 <pre><code class="hljs"><span class="hljs-selector-tag">my-app</span>
 
 ├── <span class="hljs-selector-tag">README</span><span class="hljs-selector-class">.md</span>
@@ -70,6 +71,8 @@
 ├── <span class="hljs-selector-tag">node_modules</span>
 
 ├── <span class="hljs-selector-tag">package</span><span class="hljs-selector-class">.json</span>
+
+├── <span class="hljs-selector-tag">package-lock</span><span class="hljs-selector-class">.json</span>
 
 ├── <span class="hljs-selector-class">.gitignore</span>
 
@@ -89,6 +92,7 @@
 <li><p><strong>Readme.md</strong> - This file is my-app's readme text file. The &quot;.md&quot; stands for markdown.</p></li>
 <li><p><strong>node_modules</strong> - This directory contains the code for the package dependencies for your project. You will never need to edit the files in this directory manually.</p></li>
 <li><p><strong>package.json</strong> - This file contains relevant project metadata and list of package dependencies and their accepted versions. These dependencies get installed into the node_modules directory. If you add a new dependency, the added package will be added to node_modules. If you remove a dependency, it will be removed from node_modules. Read more at <a href="https://www.npmjs.com/">npm</a>.</p></li>
+<li><p><strong>package-lock.json</strong> - This file gets generated automatically when you install dependencies for the first time, or when you update them. It keeps track of all depedencies your application requires, including their exact versions.</p></li>
 <li><p><strong>.gitignore</strong> - List of files and directories to be ignored by <a href="https://git-scm.com/">git</a>. Git is a widely used version control system, used for small and large projects. <a href="https://github.com/">Github</a>, a software development platform, is built around git.</p></li>
 <li><p><strong>public</strong> - Files that will be made available at the root of your client side React project. Mainly used for static assets, like images, and the base index.html file. You will rarely need to use this folder, as the index.html will be automatically updated for you as you work on your project.</p></li>
 <li><p><strong>src</strong> - Contains all code related files in your project, including JavaScript and CSS files. The entry point for your JavaScript code is <strong>src/index.js</strong>, which is where my-app's React will kick in.</p></li>
