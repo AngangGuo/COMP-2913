@@ -9,6 +9,8 @@ According to the official documentation: [React Component - Component Lifecycle]
 
 > Each component has several “lifecycle methods” that you can override to run code at particular times in the process. Methods prefixed with "will" are called right before something happens, and methods prefixed with "did" are called right after something happens.
 
+Note that **only** Class Components are able to use these lifecycle methods. Function components have alternatives available, which we won't cover in this course.
+
 ---
 
 #### Available Lifecycle Methods
@@ -29,23 +31,18 @@ According to the official documentation: [React Component - Component Lifecycle]
   Invoked right after a render is triggert after an update occurs. Good place to run tasks based on prop changes, as long as setState is not called without a wrapping condition.
 
 - [componentDidCatch()](https://reactjs.org/docs/react-component.html#componentdidcatch)
-
   Invoked after an error has been thrown by a nested component. Ideal for logging errors.
 
 - [shouldComponentUpdate()](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
-
   Exists for performance optimization, but can be **VERY** dangerous to use, as it can lead to ambiguous bugs that are hard to track. Avoid as much as possible.
 
 - [getDerivedStateFromProps()](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getderivedstatefromprops)
-
   Invoked before render is called. Avoid using this method, as it's use cases are rare, usually where the state of the component depends on changes in props over time.
 
 - [getSnapshotBeforeUpdate()](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#new-lifecycle-getsnapshotbeforeupdate)
-
   Invoked right before the most recent render output is commited to the DOM. Use cases are also rare, avoid when possible. Ideal for capturing visual information, like scroll position and element dimensions.
 
 - [getDerivedStateFromError()](https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror)
-
   Invoked after an error has been thrown. Ideal for recovering for unexpected errors.
 
 **Note that it is important to be aware of all of the lifecycle methods, but in most cases, these are the ones that will be used the most:**

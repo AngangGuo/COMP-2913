@@ -14,12 +14,9 @@ Although React is not a full-fledged front-end JavaScript framework, it often is
   <li><img src="/COMP-2913/img/company_logos/backbone.png" alt="backbone" style="width: 48px; margin-right: 10px; border-radius: 5px;" /></li>
 </ul>
 
-
 - Angular
 - Vue.js
-- Ember
-- Meteor
-- Backbone.js
+- Others like Ember, Meteor and Backbone.js, which are rarely seen anymore
 
 ---
 
